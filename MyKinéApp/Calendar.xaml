@@ -1,0 +1,27 @@
+﻿<Page
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyKinéApp"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="MyKinéApp.Calendar"
+        xmlns:Widget1="clr-namespace:AM.Widget.WPF;assembly=AM.Widget"
+        mc:Ignorable="d"
+        Title="Calendar" d:DesignWidth="1300" d:DesignHeight="1000"  Background="#7FFFFFFF">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="G_Calendar" Background="Black" Grid.Row="1" Grid.Column="1" >
+            <Widget1:CalendarView x:Name="CV_Calendar"/>
+        </Grid>
+        <Image x:Name="I_Close" Grid.Column="2" HorizontalAlignment="Right" Height="50" VerticalAlignment="Top" Width="50" Source="Resources/Close.png" Margin="0,10,10,0" MouseDown="I_Close_MouseDown"/>
+    </Grid>
+</Page>

@@ -1,0 +1,150 @@
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MyKinéApp.exe.config
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MyKinéApp.exe
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MyKinéApp.pdb
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\AM.Widget.dll
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MySql.Data.dll
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\Google.Protobuf.dll
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\BouncyCastle.Crypto.dll
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\AM.Widget.pdb
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MySql.Data.xml
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\Google.Protobuf.xml
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\Calendar.g.cs
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\Connexion.g.cs
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MainWindow.g.cs
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\P_Patient.g.cs
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\App.g.cs
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp_MarkupCompile.cache
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp_MarkupCompile.lref
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\Calendar.baml
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\Connexion.baml
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MainWindow.baml
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\P_Patient.baml
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.g.resources
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.Properties.Resources.resources
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.csproj.GenerateResource.Cache
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.exe
+C:\Users\amadi.EV\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MyKinéApp.exe.config
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MyKinéApp.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MyKinéApp.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MySql.Data.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\Google.Protobuf.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\Zstandard.Net.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\BouncyCastle.Crypto.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\Ubiety.Dns.Core.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\Renci.SshNet.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\System.Buffers.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\K4os.Compression.LZ4.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\K4os.Hash.xxHash.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\AM.Widget.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\bin\x64\Debug\MySql.Data.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\Calendar.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\Connexion.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MainWindow.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\P_Patient.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\App.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp_MarkupCompile.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp_MarkupCompile.lref
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\Calendar.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\Connexion.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MainWindow.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\P_Patient.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.g.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp\MyKinéApp\obj\x64\Debug\MyKinéApp.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\MyKinéApp.exe.config
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\Calendar.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\Calendar.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\Connexion.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MainWindow.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\P_Patient.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\App.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp_MarkupCompile.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp_MarkupCompile.lref
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\MyKinéApp.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\MyKinéApp.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\DevComponents.WpfEditors.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\DevComponents.WpfRibbon.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\DevComponents.WpfSchedule.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\MySql.Data.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\Google.Protobuf.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\Zstandard.Net.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\BouncyCastle.Crypto.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\Ubiety.Dns.Core.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\Renci.SshNet.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\System.Buffers.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\K4os.Compression.LZ4.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\K4os.Hash.xxHash.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\bin\x64\Debug\MySql.Data.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\Connexion.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MainWindow.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\P_Patient.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.g.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéApp - DevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\Calendar.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\Connexion.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MainWindow.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\P_Patient.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\App.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp_MarkupCompile.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp_MarkupCompile.lref
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\MyKinéApp.exe.config
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\MyKinéApp.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\MyKinéApp.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\DevComponents.WpfEditors.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\DevComponents.WpfRibbon.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\DevComponents.WpfSchedule.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\MySql.Data.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.Shared.Wpf.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.SfInput.Wpf.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.SfScheduler.WPF.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Google.Protobuf.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Zstandard.Net.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\BouncyCastle.Crypto.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Ubiety.Dns.Core.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Renci.SshNet.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.Licensing.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.SfShared.Wpf.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.SfSkinManager.WPF.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\System.Buffers.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\K4os.Compression.LZ4.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\K4os.Hash.xxHash.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\AM.Widget.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\MySql.Data.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.Shared.Wpf.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.SfInput.Wpf.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.SfScheduler.WPF.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.SfShared.Wpf.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Syncfusion.SfSkinManager.WPF.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\de\AM.Widget.resources.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\Calendar.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\Connexion.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MainWindow.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\P_Patient.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.g.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\fr-CA\AM.Widget.resources.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\de\MyKinéApp.resources.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\fr-CA\MyKinéApp.resources.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.Resources.Syncfusion.SfScheduler.WPF.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.Resources.Syncfusion.SfScheduler.WPF.de.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\MyKinéApp.Resources.Syncfusion.SfScheduler.WPF.fr-CA.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\de\MyKinéApp.resources.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\obj\x64\Debug\fr-CA\MyKinéApp.resources.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\MyKinéAppDevExpress\MyKinéApp\bin\x64\Debug\Newtonsoft.Json.dll
