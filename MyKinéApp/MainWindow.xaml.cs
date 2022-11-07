@@ -27,6 +27,7 @@ namespace MyKinéApp
         public MainWindow()
         {
             InitializeComponent();
+            DataBase.ReadFile();
             /*B_Patient.Visibility = Visibility.Hidden;
             B_Calendar.Visibility = Visibility.Hidden;
             B_Facture.Visibility = Visibility.Hidden;*/

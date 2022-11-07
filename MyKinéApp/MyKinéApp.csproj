@@ -59,21 +59,9 @@
     <ApplicationIcon>KineApp.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AM.Widget, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AM.Widget, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\AM.Widget\AM.Widget\bin\x64\Debug\AM.Widget.dll</HintPath>
-    </Reference>
-    <Reference Include="DevComponents.WpfEditors, Version=7.9.0.68, Culture=neutral, PublicKeyToken=cbba4a1563683cdb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\DLL\DevComponents.WpfEditors.dll</HintPath>
-    </Reference>
-    <Reference Include="DevComponents.WpfRibbon, Version=7.9.0.68, Culture=neutral, PublicKeyToken=2037e151916410e7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\DLL\DevComponents.WpfRibbon.dll</HintPath>
-    </Reference>
-    <Reference Include="DevComponents.WpfSchedule, Version=7.9.0.68, Culture=neutral, PublicKeyToken=7c218705742a0d96, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\DLL\DevComponents.WpfSchedule.dll</HintPath>
+      <HintPath>..\..\..\DLL\AM.Widget.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -159,6 +147,8 @@
     <EmbeddedResource Include="Resources\Syncfusion.SfScheduler.WPF.de.resx" />
     <EmbeddedResource Include="Resources\Syncfusion.SfScheduler.WPF.fr-CA.resx" />
     <EmbeddedResource Include="Resources\Syncfusion.SfScheduler.WPF.resx" />
+    <EmbeddedResource Include="Resources\Syncfusion.Shared.Wpf.fr-CA.resx" />
+    <EmbeddedResource Include="Resources\Syncfusion.Shared.Wpf.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

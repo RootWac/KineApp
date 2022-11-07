@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,8 @@ namespace MyKinéApp
 {
     class DataBase
     {
-        public static string SQLServerIP = "192.168.0.180";
-        //public static string SQLServerIP = "192.168.3.107";
+        //public static string SQLServerIP = "192.168.0.180";
+        public static string SQLServerIP = "127.0.0.1";
         public static string ID = "Admin";
         public static string Database = "Database";
         public static string Password = "Wydad2005";
@@ -23,6 +24,21 @@ namespace MyKinéApp
         public static string PatientClinicalFollowUp = "patients_suiviclinique";
         public static string Appointement = "appointements";
         
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void ReadFile()
+        {
+            try
+            {
+                var dat = File.ReadAllText("SQLConfig.txt").Split(';');
+                SQLServerIP = dat[0];
+                Database = dat[1];
+            }
+            catch (Exception)
+            {}
+        }
+
         /// <summary>
         /// Returns the string used to connect to database
         /// </summary>

@@ -27,7 +27,8 @@
         </Style>
     </Window.Resources>
     <Window.Background>
-        <ImageBrush ImageSource="Resources/Kine.jpg"/>
+        <ImageBrush ImageSource="Resources/Kine.jpg" Opacity="0.3
+                    "/>
     </Window.Background>
     <Grid Visibility="Visible">
         <Grid.RowDefinitions>
