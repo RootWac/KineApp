@@ -22,7 +22,7 @@ namespace MyKinéApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool IsConnected = false;
+        internal static bool IsConnected = false;
         internal static Dictionary<int, string> PatientsNames;
         public MainWindow()
         {
@@ -33,6 +33,7 @@ namespace MyKinéApp
             B_Facture.Visibility = Visibility.Hidden;*/
             PatientsNames = DataBase.GetPatientsNames();
             AppointmentEditor.PatientsNames = PatientsNames;
+            GoogleCalendar.Initialize();
         }
 
 
@@ -62,9 +63,9 @@ namespace MyKinéApp
             if (DataBase.CheckPassword(Connexion.Username, Connexion.Password))
             {
                 IsConnected = true;
-                B_Patient.Visibility = Visibility.Visible;
+                /*B_Patient.Visibility = Visibility.Visible;
                 B_Calendar.Visibility = Visibility.Visible;
-                B_Facture.Visibility = Visibility.Visible;
+                B_Facture.Visibility = Visibility.Visible;*/
                 IB_User.ImageSource = BitmapConvert(Properties.Resources.UserDisconnect);
             }
         }
@@ -83,9 +84,9 @@ namespace MyKinéApp
             else
             {
                 IsConnected = false;
-                B_Patient.Visibility = Visibility.Hidden;
+                /*B_Patient.Visibility = Visibility.Hidden;
                 B_Calendar.Visibility = Visibility.Hidden;
-                B_Facture.Visibility = Visibility.Hidden;
+                B_Facture.Visibility = Visibility.Hidden;*/
                 IB_User.ImageSource = BitmapConvert(Properties.Resources.UserConnect);
             }
         }
@@ -110,6 +111,11 @@ namespace MyKinéApp
         private void B_Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void B_Facture_Click(object sender, RoutedEventArgs e)
+        {
+            F_Billing.Visibility = Visibility.Visible;
         }
     }
 }

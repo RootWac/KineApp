@@ -23,7 +23,8 @@ namespace MyKinéApp
         public static string UserTableName = "utilisateurs";
         public static string PatientClinicalFollowUp = "patients_suiviclinique";
         public static string Appointement = "appointements";
-        
+        public static string Billing = "billing";
+
         /// <summary>
         /// 
         /// </summary>
@@ -48,6 +49,18 @@ namespace MyKinéApp
             return "SERVER = " + SQLServerIP + "; DATABASE = " + Database + "; UID = " + ID + "; PASSWORD =" + Password + "; SslMode=None";
         }
 
+        public static void Log(string message)
+        {
+            // Creating a file
+            string myfile = @"logfile.txt";
+
+            // Appending the given texts
+            using (StreamWriter sw = File.AppendText(myfile))
+            {
+                sw.WriteLine(message);
+            }
+        }
+
         ////////////////////////////////////////////////////////////// Add //////////////////////////////////////////////////////////
         /// <summary>
         /// 
@@ -58,6 +71,7 @@ namespace MyKinéApp
         /// <param name="Phone"></param>
         public static bool AddPatient(Patient Value)
         {
+            string query = "Insert into `" + Database + "`.`" + PatientTableName + "` (`Prenom`, `Nom`, `Tel`, `Addresse`, `CIN`, `Date de naissance`, `Poids`, `Taille`, `Sexe`) Values ('" + Value.Name + "'" + ", '" + Value.LastName + "'" + ", '" + Value.PhoneNumber + "'" + ", '" + Value.Address + "'" + ", '" + Value.CIN + "'" + ", '" + Value.Birthday.ToString("yyyy-MM-dd HH:mm:ss") + "'" + ", " + Value.Weight + ", " + Value.Height + ", '" + Value.Gender + "'" + ");";
             try
             {
                 // Connect to location
@@ -66,14 +80,15 @@ namespace MyKinéApp
 
                 // Update DB
                 MySqlCommand InsertQuery = connection.CreateCommand();
-                InsertQuery.CommandText = "Insert into `" + Database + "`.`" + PatientTableName + "` (`Prenom`, `Nom`, `Tel`, `Addresse`, `CIN`, `Date de naissance`, `Poids`, `Taille`, `Sexe`) Values ('" + Value.Name + "'" + ", '" + Value.LastName + "'" + ", '" + Value.PhoneNumber + "'" + ", '" + Value.Address + "'" + ", '" + Value.CIN + "'" + ", '" + Value.Birthday.ToString("yyyy-MM-dd HH:mm:ss") + "'" + ", " + Value.Weight + ", " + Value.Height + ", '" + Value.Gender + "'"+ ");";
+                InsertQuery.CommandText = query;
                 int rowCount = InsertQuery.ExecuteNonQuery();
 
                 connection.Close();
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.ToString());
+                Log(query);
+                //System.Windows.MessageBox.Show(ex.ToString());
                 return false;
             }
             return true;
@@ -104,7 +119,10 @@ namespace MyKinéApp
                     connection.Close();
                 }
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                Log(sql);
+            }
 
             return Value > 0;
         }
@@ -147,7 +165,8 @@ namespace MyKinéApp
             catch (Exception ex)
             {
                 dt = new DataTable();
-                System.Windows.MessageBox.Show(ex.ToString());
+                //System.Windows.MessageBox.Show(ex.ToString());
+                Log(sql);
             }
 
             return dt;
@@ -185,7 +204,8 @@ namespace MyKinéApp
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.ToString());
+                //System.Windows.MessageBox.Show(ex.ToString());
+                Log(sql);
             }
 
             return PatientsNames;
@@ -232,10 +252,41 @@ namespace MyKinéApp
             }
             catch (Exception ex)
             {
+                Log(sql);
                 return null;
             }
 
             return SearchPatient;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="DateStart"></param>
+        /// <param name="DateEnd"></param>
+        /// <param name="D_Filter"></param>
+        /// <returns></returns>
+        public static void DeletePatient(int ID)
+        {
+            string sql = "DELETE FROM " + Database + "." + PatientTableName + " Where id = " + ID + ";";
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(getConnectionQuery()))
+                {
+                    connection.Open();
+                    using (MySqlCommand cmdSel = new MySqlCommand(sql, connection))
+                    {
+                        //Execute command
+                        cmdSel.ExecuteNonQuery();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log(sql);
+            }
         }
 
 
@@ -270,7 +321,10 @@ namespace MyKinéApp
                     connection.Close();
                 }
             }
-            catch (Exception ex){}
+            catch (Exception ex)
+            {
+                Log(sql);
+            }
         }
 
         /// <summary>
@@ -297,7 +351,7 @@ namespace MyKinéApp
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.ToString());
+                //System.Windows.MessageBox.Show(ex.ToString());
                 return false;
             }
             return true;
@@ -345,7 +399,10 @@ namespace MyKinéApp
                     connection.Close();
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                Log(sql);
+            }
             return MeeetingsData;
         }
 
@@ -392,7 +449,7 @@ namespace MyKinéApp
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.ToString());
+                //System.Windows.MessageBox.Show(ex.ToString());
                 return false;
             }
             return true;
@@ -419,13 +476,112 @@ namespace MyKinéApp
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.ToString());
+                //System.Windows.MessageBox.Show(ex.ToString());
                 return false;
             }
             return true;
         }
 
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="D_Filter"></param>
+        /// <returns></returns>
+        public static Dictionary<DateTime, double> GetBillingHistory(int PatientID)
+        {
+            Dictionary<DateTime, double> MeeetingsData = new Dictionary<DateTime, double>();
+            string sql = "SELECT Date, Amount FROM " + Database + "." + Billing + " WHERE PatientID = " + PatientID + ";";
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(getConnectionQuery()))
+                {
+                    connection.Open();
+                    using (MySqlCommand cmdSel = new MySqlCommand(sql, connection))
+                    {
+                        //Get the DataReader from the comment using ExecuteReader
+                        MySqlDataReader myReader = cmdSel.ExecuteReader();
+
+                        //Id, PatientID, EventName, Notes, Begin, End, Color, Location, RecurrenceData, RecurrenceRule.
+                        while (myReader.Read())
+                        {
+                            MeeetingsData[(DateTime)myReader[0]] = (double)myReader[1];
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log(sql);
+            }
+            return MeeetingsData;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name="Lastname"></param>
+        /// <param name="Adress"></param>
+        /// <param name="Phone"></param>
+        public static bool AddBilling(Patient Value, double Amount)
+        {
+            try
+            {
+                // Connect to location
+                MySqlConnection connection = new MySqlConnection(getConnectionQuery());
+                connection.Open();
+
+                // Update DB
+                MySqlCommand InsertQuery = connection.CreateCommand();
+                InsertQuery.CommandText = "Insert into `" + Database + "`.`" + Billing + "` (`PatientID`, `Date`, `Amount`) Values (" + Value.ID + ", now(), " + Amount + ");";
+                int rowCount = InsertQuery.ExecuteNonQuery();
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                //System.Windows.MessageBox.Show(ex.ToString());
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name="Lastname"></param>
+        /// <param name="Adress"></param>
+        /// <param name="Phone"></param>
+        public static bool DeleteBilling(Patient Value, DateTime Date)
+        {
+            string query = "DELETE FROM `" + Database + "`.`" + Billing + "` WHERE `PatientID`=" + Value.ID + " AND `Date`='" + Date.ToString("yyyy-MM-dd HH:mm:ss") + "';";
+
+            try
+            {
+                // Connect to location
+                MySqlConnection connection = new MySqlConnection(getConnectionQuery());
+                connection.Open();
+
+                // Update DB
+                MySqlCommand InsertQuery = connection.CreateCommand();
+                InsertQuery.CommandText = query;
+                int rowCount = InsertQuery.ExecuteNonQuery();
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Log(query);
+                //System.Windows.MessageBox.Show(ex.ToString());
+                return false;
+            }
+            return true;
+        }
+
+
     }
 
     public static class Extension

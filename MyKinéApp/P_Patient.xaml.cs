@@ -23,7 +23,7 @@ namespace MyKinéApp
     public partial class P_Patient : Page
     {
         private Dictionary<string, string> Filter = new Dictionary<string, string>();
-        private Patient ShownPatient;
+        internal static Patient ShownPatient;
 
         public P_Patient()
         {
@@ -195,6 +195,9 @@ namespace MyKinéApp
             TB_BalanceSheet.Text = (ShownPatient != null && ShownPatient.BalanceSheet != null) ? ShownPatient.BalanceSheet : "";
             TB_Treatment.Text = (ShownPatient != null && ShownPatient.Treatment != null) ? ShownPatient.Treatment : "";
             TB_Diagnostic.Text = (ShownPatient != null && ShownPatient.Diagnostic != null) ? ShownPatient.Diagnostic : "";
+
+            B_PatientDelete.Visibility = MainWindow.IsConnected && ShownPatient != null ? Visibility.Visible : Visibility.Hidden;
+
         }
 
         /// <summary>
@@ -309,6 +312,16 @@ namespace MyKinéApp
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             SetFont();
+        }
+
+        private void B_PatientDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if(ShownPatient != null)
+            {
+                DataBase.DeletePatient(ShownPatient.ID);
+                DG_Patients.ItemsSource = DataBase.GetPatients(ref Filter).DefaultView;
+                CollectionViewSource.GetDefaultView(DG_Patients.ItemsSource).Refresh();
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////// Fin ////////////////////////////////////////////////////////////////

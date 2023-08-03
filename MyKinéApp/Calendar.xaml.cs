@@ -27,6 +27,7 @@ namespace MyKinéApp
             CV_Calendar.UpdateData(DataBase.GetAppointements());
             CV_Calendar.NewOrEditAppointementEvent += new CalendarView.NewOrEditAppointementEventHandler(AddAppointement_Event);
             CV_Calendar.DeletingAppointementEvent += new CalendarView.DeletingAppointementEventHandler(DeletingAppointement_Event);
+            GoogleCalendar.Sync(CV_Calendar.D_MeetingData.Values.ToList());
         }
 
         private void DeletingAppointement_Event(int Value)
@@ -39,6 +40,7 @@ namespace MyKinéApp
         {
             DataBase.UpdateAppointement(Value);
             CV_Calendar.UpdateData(DataBase.GetAppointements());
+            GoogleCalendar.Update(Value);
         }
 
         /// <summary>

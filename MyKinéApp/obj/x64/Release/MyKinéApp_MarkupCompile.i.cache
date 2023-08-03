@@ -8,13 +8,13 @@ C:\Users\Admin\Documents\GitKraken\KineApp\MyKinéApp\obj\x64\Release\
 MyKinéApp
 none
 false
-TRACE
+TRACE;Release
 C:\Users\Admin\Documents\GitKraken\KineApp\MyKinéApp\App.xaml
-4-1945047978
+51343681587
 
-161538736527
-16-1419333331
-Calendar.xaml;Connexion.xaml;MainWindow.xaml;P_Patient.xaml;
+17716773291
+231550453621
+Billing.xaml;Calendar.xaml;Connexion.xaml;MainWindow.xaml;P_Patient.xaml;
 
-False
+True
 

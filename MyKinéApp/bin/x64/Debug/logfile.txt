@@ -1,0 +1,60 @@
+The service calendar has thrown an exception.
+HttpStatusCode is Forbidden.
+Google.Apis.Requests.RequestError
+You need to have writer access to this calendar. [403]
+Errors [
+	Message[You need to have writer access to this calendar.] Location[ - ] Reason[requiredAccessLevel] Domain[calendar]
+]
+
+Google.GoogleApiException: The service calendar has thrown an exception. HttpStatusCode is Forbidden. You need to have writer access to this calendar.
+   à Google.Apis.Requests.ClientServiceRequest`1.<ParseResponse>d__35.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à Google.Apis.Requests.ClientServiceRequest`1.Execute()
+   à MyKinéApp.GoogleCalendar.AddEvent(Meeting met) dans C:\Users\Admin\Documents\GitKraken\KineApp\MyKinéApp\GoogleCalendar.cs:ligne 165
+   à MyKinéApp.GoogleCalendar.Update(Events allevents, String CalendarId, Meeting met) dans C:\Users\Admin\Documents\GitKraken\KineApp\MyKinéApp\GoogleCalendar.cs:ligne 141
+   à MyKinéApp.GoogleCalendar.Sync(List`1 Meet) dans C:\Users\Admin\Documents\GitKraken\KineApp\MyKinéApp\GoogleCalendar.cs:ligne 82
+The service calendar has thrown an exception.
+HttpStatusCode is Forbidden.
+Google.Apis.Requests.RequestError
+You need to have writer access to this calendar. [403]
+Errors [
+	Message[You need to have writer access to this calendar.] Location[ - ] Reason[requiredAccessLevel] Domain[calendar]
+]
+
+Google.GoogleApiException: The service calendar has thrown an exception. HttpStatusCode is Forbidden. You need to have writer access to this calendar.
+   à Google.Apis.Requests.ClientServiceRequest`1.<ParseResponse>d__35.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à Google.Apis.Requests.ClientServiceRequest`1.Execute()
+   à MyKinéApp.GoogleCalendar.AddEvent(Meeting met) dans C:\Users\Admin\Documents\GitKraken\KineApp\MyKinéApp\GoogleCalendar.cs:ligne 165
+   à MyKinéApp.GoogleCalendar.Update(Events allevents, String CalendarId, Meeting met) dans C:\Users\Admin\Documents\GitKraken\KineApp\MyKinéApp\GoogleCalendar.cs:ligne 141
+   à MyKinéApp.GoogleCalendar.Sync(List`1 Meet) dans C:\Users\Admin\Documents\GitKraken\KineApp\MyKinéApp\GoogleCalendar.cs:ligne 82
+Google.Apis.Auth.OAuth2.Responses.TokenResponseException: Error:"invalid_grant", Description:"Bad Request", Uri:""
+   à Google.Apis.Auth.OAuth2.Responses.TokenResponse.<FromHttpResponseAsync>d__44.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.<ExecuteAsync>d__1.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Google.Apis.Auth.OAuth2.Flows.AuthorizationCodeFlow.<FetchTokenAsync>d__42.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à Google.Apis.Auth.OAuth2.Flows.AuthorizationCodeFlow.<FetchTokenAsync>d__42.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Google.Apis.Auth.OAuth2.Flows.AuthorizationCodeFlow.<RefreshTokenAsync>d__38.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Google.Apis.Auth.OAuth2.UserCredential.<RefreshTokenAsync>d__29.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à Google.Apis.Auth.OAuth2.TokenRefreshManager.<RefreshTokenAsync>d__12.MoveNext()
+--- Fin de la trace de la pile à partir de l'emplacement précédent au niveau duquel l'exception a été levée ---
+   à System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   à System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   à Google.Apis.Auth.OAuth2.TokenRefreshManager.<<GetAccessTokenForRequestAsync>g__LogException|10_0>d.MoveNext()
