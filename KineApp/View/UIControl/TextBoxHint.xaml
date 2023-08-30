@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="WpfApp1.UIControl.TextBoxHint"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.UIControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="120">
+    <UserControl.Resources>
+        <VisualBrush x:Key="SearchHint" TileMode="None" Stretch="None" AlignmentX="Left">
+            <VisualBrush.Transform>
+                <TranslateTransform X="5" Y="0" />
+            </VisualBrush.Transform>
+            <VisualBrush.Visual>
+                <Grid>
+                    <TextBlock FontStyle="Italic" Foreground="Black" Opacity="0.3" Text="Search …"/>
+                </Grid>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBox x:Name="TB_Element" VerticalContentAlignment="Center"  Height="30">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="Background" Value="{StaticResource SearchHint}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+    </StackPanel>
+</UserControl>
