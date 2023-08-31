@@ -812,3 +812,66 @@ File name: 'C:\Users\Admin\AppData\Roaming\KineApp\GoogleCalendar.txt'
    at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
    at KineApp.Controller.Encryption.Read(String Path) in C:\Users\Admin\Documents\GitKraken\KineApp\KineApp\Controller\Encryption.cs:line 50
    at KineApp.Controller.FileIO.ReadGoogleCalendar() in C:\Users\Admin\Documents\GitKraken\KineApp\KineApp\Controller\FileIO.cs:line 37
+8/31/2023 9:31:52 AM: Error while reading the GoogleCalendar file :System.IO.FileNotFoundException: Could not find file 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'.
+File name: 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at KineApp.Controller.Encryption.Read(String Path) in C:\Users\Admin\Documents\GitKraken\KineApp\KineApp\Controller\Encryption.cs:line 50
+   at KineApp.Controller.FileIO.ReadGoogleCalendar() in C:\Users\Admin\Documents\GitKraken\KineApp\KineApp\Controller\FileIO.cs:line 37
+8/31/2023 9:35:41 AM: Error while reading the GoogleCalendar file :System.IO.FileNotFoundException: Could not find file 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'.
+File name: 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at KineApp.Controller.Encryption.Read(String Path) in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\Encryption.cs:line 50
+   at KineApp.Controller.FileIO.ReadGoogleCalendar() in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\FileIO.cs:line 37
+8/31/2023 9:45:19 AM: Error while reading the GoogleCalendar file :System.IO.FileNotFoundException: Could not find file 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'.
+File name: 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at KineApp.Controller.Encryption.Read(String Path) in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\Encryption.cs:line 50
+   at KineApp.Controller.FileIO.ReadGoogleCalendar() in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\FileIO.cs:line 37
+8/31/2023 9:46:57 AM: Error while reading the GoogleCalendar file :System.IO.FileNotFoundException: Could not find file 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'.
+File name: 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at KineApp.Controller.Encryption.Read(String Path) in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\Encryption.cs:line 50
+   at KineApp.Controller.FileIO.ReadGoogleCalendar() in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\FileIO.cs:line 37
+8/31/2023 9:50:41 AM: Error while reading the GoogleCalendar file :System.IO.FileNotFoundException: Could not find file 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'.
+File name: 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at KineApp.Controller.Encryption.Read(String Path) in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\Encryption.cs:line 50
+   at KineApp.Controller.FileIO.ReadGoogleCalendar() in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\FileIO.cs:line 37
+8/31/2023 9:52:00 AM: Error while reading the GoogleCalendar file :System.IO.FileNotFoundException: Could not find file 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'.
+File name: 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at KineApp.Controller.Encryption.Read(String Path) in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\Encryption.cs:line 50
+   at KineApp.Controller.FileIO.ReadGoogleCalendar() in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\FileIO.cs:line 37
+8/31/2023 9:56:09 AM: Error while reading the GoogleCalendar file :System.IO.FileNotFoundException: Could not find file 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'.
+File name: 'C:\Users\amadi\AppData\Roaming\KineApp\GoogleCalendar.txt'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at KineApp.Controller.Encryption.Read(String Path) in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\Encryption.cs:line 50
+   at KineApp.Controller.FileIO.ReadGoogleCalendar() in C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\Controller\FileIO.cs:line 37

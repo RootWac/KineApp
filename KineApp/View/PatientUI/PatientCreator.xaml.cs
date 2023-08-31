@@ -20,10 +20,12 @@ namespace KineApp.PatientUI
     /// </summary>
     public partial class PatientCreator : Page
     {
-        public int Font { get; set; } = 7;
+        public int Font { get; set; } = 9;
 
         public PatientCreator()
         {
+            Font = (int)(Font * Data.ZOOM);
+
             InitializeComponent();
             DataContext = this;
         }

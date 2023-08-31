@@ -12,6 +12,8 @@ namespace KineApp.Controller
 {
     class Data
     {
+        public static double ZOOM = 1;
+
         public static bool IsGoogleCalendarActivated;
 
         /// <summary>
@@ -30,6 +32,8 @@ namespace KineApp.Controller
         /// </summary>
         public static void Initialize(bool UseGoogle = true)
         {
+            ZOOM = 1920 / System.Windows.SystemParameters.PrimaryScreenWidth;
+
             UpdatePatients();
 
             IsGoogleCalendarActivated = UseGoogle;

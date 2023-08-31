@@ -32,7 +32,7 @@ namespace KineApp.PatientUI
     {
         private static PatientInit _CurrentPage;
         private static Patient _SelectedPatient = null;
-        public int Font { get; set; } = 7;
+        public int Font { get; set; } = 9;
 
         public static Patient SelectedPatient
         {
@@ -49,6 +49,8 @@ namespace KineApp.PatientUI
 
         public PatientInit()
         {
+            Font = (int)(Font * Data.ZOOM);
+
             InitializeComponent();
             DataContext = this;
 

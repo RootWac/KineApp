@@ -23,11 +23,14 @@ namespace KineApp.View.PatientUI
     /// </summary>
     public partial class SessionPatient : Page
     {
-        public int TitleFont { get; set; } = 12;
-        public int Font { get; set; } = 10;
+        public int TitleFont { get; set; } = 16;
+        public int Font { get; set; } = 14;
         Patient SelectedPatient;
         public SessionPatient()
         {
+            TitleFont = (int)(TitleFont * Data.ZOOM);
+            Font = (int)(Font * Data.ZOOM);
+
             InitializeComponent();
             DataContext = this;
         }
