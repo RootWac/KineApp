@@ -32,7 +32,7 @@ namespace KineApp.Controller
         /// </summary>
         public static void Initialize(bool UseGoogle = true)
         {
-            ZOOM = 1920 / System.Windows.SystemParameters.PrimaryScreenWidth;
+            ZOOM = System.Windows.SystemParameters.PrimaryScreenWidth / 1920;
 
             UpdatePatients();
 
