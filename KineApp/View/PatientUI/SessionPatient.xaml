@@ -41,24 +41,24 @@
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Title :" VerticalContentAlignment="Center" FontSize="16"/>
-                <TextBox x:Name="TB_Tilte" Grid.Column="1" TextWrapping="Wrap" Text="Seance numero 2" Margin="5" Height="30" FontSize="16"/>
+                <Label Content="Title :" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <TextBox x:Name="TB_Tilte" Grid.Column="1" TextWrapping="Wrap" Text="Seance numero 2" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                <Label Content="Temps (minute) :" VerticalContentAlignment="Center" Grid.Row="1" FontSize="16"/>
+                <Label Content="Temps (minute) :" VerticalContentAlignment="Center" Grid.Row="1" FontSize="{Binding Font, Mode=TwoWay}"/>
                 <DockPanel Grid.Column="2" Grid.Row="1" Margin="0,0,0,10" Grid.ColumnSpan="2" >
-                    <TextBox x:Name="TB_SessionTime" Text="{Binding ElementName=S_SessionTime, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="16" DockPanel.Dock="Right" TextAlignment="Right" Width="50" Height="46" />
-                    <Slider x:Name="S_SessionTime" Maximum="120" Minimum="1" Value="30" FontSize="16" Height="30" HorizontalContentAlignment="Center" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True"/>
+                    <TextBox x:Name="TB_SessionTime" Text="{Binding ElementName=S_SessionTime, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="{Binding Font, Mode=TwoWay}" DockPanel.Dock="Right" TextAlignment="Right" Width="50" Height="46" />
+                    <Slider x:Name="S_SessionTime" Maximum="120" Minimum="1" Value="30" FontSize="{Binding Font, Mode=TwoWay}" Height="30" HorizontalContentAlignment="Center" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True"/>
                 </DockPanel>
-                <Label Content="Rendez-vous :" Grid.Row="2" VerticalContentAlignment="Center" FontSize="16" />
-                <ComboBox x:Name="CB_Appoitement" Grid.Column="1" Grid.Row="2" Margin="5" Height="30" FontSize="16"/>
+                <Label Content="Rendez-vous :" Grid.Row="2" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}" />
+                <ComboBox x:Name="CB_Appoitement" Grid.Column="1" Grid.Row="2" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                <Label Content="Tarif :" Grid.Row="3" VerticalContentAlignment="Center" FontSize="16"/>
-                <TextBox x:Name="TB_Price" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" Margin="5" Height="30" FontSize="16"/>
+                <Label Content="Tarif :" Grid.Row="3" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <TextBox x:Name="TB_Price" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                <Label Content="Decription :" Grid.Row="4" FontSize="16"/>
-                <TextBox x:Name="TB_Description" AcceptsReturn="True" TextWrapping="Wrap" Text="" Grid.Row="4" Margin="15,40,15,15" Grid.ColumnSpan="3" FontSize="16"/>
+                <Label Content="Decription :" Grid.Row="4" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <TextBox x:Name="TB_Description" AcceptsReturn="True" TextWrapping="Wrap" Text="" Grid.Row="4" Margin="15,40,15,15" Grid.ColumnSpan="3" FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                <Button Content="Ajouter" Width="120" HorizontalAlignment="Right" Margin="0,0,5,5" Grid.Row="5" Grid.Column="1" MaxHeight="40" Click="B_AddSession_Click"/>
+                <Button Content="Ajouter" Width="120" HorizontalAlignment="Right" Margin="0,0,5,5" Grid.Row="5" Grid.Column="1" MaxHeight="40" Click="B_AddSession_Click" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
             </Grid>
         </Border>
 
@@ -70,11 +70,11 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Derniere seance" FontSize="18" FontWeight="Bold"/>
-                <Label x:Name="L_SessionNumber" Content="Seance numero 1" FontSize="16" Grid.Row="1"/>
-                <ProgressBar Grid.Row="2" Value="100" Margin="5,5,100,5" />
-                <Label x:Name="L_SessionTime" Grid.Row="2" HorizontalAlignment="Right" Content="30min" FontSize="16"/>
-                <TextBox x:Name="TB_DescriptionView" IsReadOnly="True" TextWrapping="Wrap" Text="" Grid.Row="4" Grid.ColumnSpan="3" FontSize="16"/>
+                <Label Content="Derniere seance" FontSize="{Binding TTitleFont, Mode=TwoWay}" FontWeight="Bold"/>
+                <Label x:Name="L_SessionNumber" Content="Seance numero 1" FontSize="{Binding Font, Mode=TwoWay}" Grid.Row="1"/>
+                <ProgressBar Grid.Row="2" Value="100" Margin="5,5,100,5" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <Label x:Name="L_SessionTime" Grid.Row="2" HorizontalAlignment="Right" Content="30min" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <TextBox x:Name="TB_DescriptionView" IsReadOnly="True" TextWrapping="Wrap" Text="" Grid.Row="4" Grid.ColumnSpan="3" FontSize="{Binding Font, Mode=TwoWay}"/>
             </Grid>
         </Border>
 
@@ -84,7 +84,7 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Nombre total de seance" FontSize="18" FontWeight="Bold"/>
+                <Label Content="Nombre total de seance" FontSize="{Binding TitleFont, Mode=TwoWay}" FontWeight="Bold"/>
             </Grid>
         </Border>
 
@@ -94,7 +94,7 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="15*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Historique" FontSize="18" FontWeight="Bold"/>
+                <Label Content="Historique" FontSize="{Binding TitleFont, Mode=TwoWay}" FontWeight="Bold"/>
                 <DockPanel LastChildFill="False" Grid.Row="1"/>
             </Grid>
         </Border>

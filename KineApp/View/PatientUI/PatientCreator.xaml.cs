@@ -20,9 +20,12 @@ namespace KineApp.PatientUI
     /// </summary>
     public partial class PatientCreator : Page
     {
+        public int Font { get; set; } = 7;
+
         public PatientCreator()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         /// <summary>

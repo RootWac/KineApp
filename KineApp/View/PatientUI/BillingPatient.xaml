@@ -14,10 +14,10 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" Margin="62,20,43,23" Background="White" CornerRadius="5">
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" Margin="10" Background="White" CornerRadius="5">
             <Grid Margin="20,0,20,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
@@ -28,11 +28,11 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35"/>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
                     <RowDefinition Height="10"/>
                     <RowDefinition Height="2*"/>
-                    <RowDefinition Height="5*"/>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
                 <DockPanel FlowDirection="RightToLeft" Margin="-20,0,-20,0" Grid.ColumnSpan="5">
                     <DockPanel.Background>
@@ -44,11 +44,11 @@
                     <Image x:Name="image" Width="50" HorizontalAlignment="Left" Source="/Resources/Save.png" MouseDown="image_MouseDown"/>
                 </DockPanel>
 
-                <Label Grid.Row="1" Content="Details de la facture" FontSize="22"/>
+                <Label Grid.Row="1" Content="Details de la facture" FontSize="{Binding HeaderFont, Mode=TwoWay}" FontWeight="Bold"/>
                 <Line Grid.ColumnSpan="4" Grid.Row="2" Stroke="Black" X2="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" StrokeThickness="1" />
 
-                <Label Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Bottom" Content="Type" FontSize="20" Margin="10,0,10,0"/>
-                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="30,0,10,20">
+                <Label Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Bottom" Content="Type" FontSize="{Binding TitleFont, Mode=TwoWay}" Margin="10,0,10,0"/>
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="30,0,10,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -59,18 +59,18 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <RadioButton x:Name="RB_Total" Content="Total" VerticalContentAlignment="Bottom" IsChecked="True" Grid.ColumnSpan="3" FontSize="12" Checked="RB_Total_Checked"/>
-                    <RadioButton x:Name="RB_Period" Content="Periode" VerticalContentAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="3" FontSize="12" Checked="RB_Period_Checked"/>
-                    <Label Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Top" Content="From" FontSize="12" Margin="10,0,10,0"/>
-                    <Label Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Top" Content="To" FontSize="12" Margin="10,0,10,0"/>
-                    <DatePicker x:Name="DP_Begin" Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Top" Margin="30,0,10,0" SelectedDateChanged="DP_Begin_SelectedDateChanged"/>
-                    <DatePicker x:Name="DP_End" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Top" Margin="30,0,10,0" SelectedDateChanged="DP_End_SelectedDateChanged"/>
+                    <RadioButton x:Name="RB_Total" Content="Total" VerticalContentAlignment="Bottom" IsChecked="True" FontSize="{Binding Font, Mode=TwoWay}" Checked="RB_Total_Checked"/>
+                    <RadioButton x:Name="RB_Period" Content="Periode" VerticalContentAlignment="Bottom" Grid.Row="1" FontSize="{Binding Font, Mode=TwoWay}" Checked="RB_Period_Checked"/>
+                    <Label Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Top" Content="From" FontSize="{Binding Font, Mode=TwoWay}" Margin="10,0,10,0"/>
+                    <Label Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Top" Content="To" FontSize="{Binding Font, Mode=TwoWay}" Margin="10,0,10,0"/>
+                    <DatePicker x:Name="DP_Begin" Grid.Row="3" Grid.Column="0" Margin="30,0,10,0" SelectedDateChanged="DP_Begin_SelectedDateChanged" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <DatePicker x:Name="DP_End" Grid.Row="3" Grid.Column="2" Margin="10,0,10,0" SelectedDateChanged="DP_End_SelectedDateChanged" FontSize="{Binding Font, Mode=TwoWay}"/>
 
                 </Grid>
 
 
-                <Label Grid.Row="3" Grid.Column="2" VerticalContentAlignment="Bottom" Content="Commentaire" FontSize="18" Margin="10,0,10,0"/>
-                <TextBox x:Name="TB_Comment" Grid.Row="4" Grid.Column="2" TextWrapping="Wrap" Text="" Margin="10,0,10,10"/>
+                <Label Grid.Row="3" Grid.Column="2" VerticalContentAlignment="Bottom" Content="Commentaire" Margin="10,0,10,0" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
+                <TextBox x:Name="TB_Comment" Grid.Row="4" Grid.Column="2" TextWrapping="Wrap" Text="" Margin="10,0,10,10" FontSize="{Binding Font, Mode=TwoWay}" />
 
                 <Border Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" BorderBrush="LightGray" BorderThickness="2" Margin="10">
                     <Grid Margin="10,2,10,2">
@@ -95,7 +95,7 @@
                     </Grid>
                 </Border>
 
-                <Grid Grid.Row="5"  Margin="20,-10,20,10">
+                <Grid Grid.Row="5"  Margin="20,0,0,1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="60"/>
@@ -104,32 +104,32 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Rabais" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="TB_Discount" Text="0" TextChanged="TB_Discount_TextChanged" Grid.Row="1" Margin="10,0,0,0"/>
-                    <ComboBox x:Name="CBB_DiscountType" Grid.Column="1" SelectedIndex="0" Height="28" Grid.Row="1" SelectionChanged="CBB_DiscountType_SelectionChanged"/>
+                    <Label Content="Rabais" Grid.ColumnSpan="2" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <TextBox x:Name="TB_Discount" Text="0" TextChanged="TB_Discount_TextChanged" Grid.Row="1" Margin="10,0,0,0" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <ComboBox x:Name="CBB_DiscountType" Grid.Column="1" SelectedIndex="0" Grid.Row="1" SelectionChanged="CBB_DiscountType_SelectionChanged" FontSize="{Binding Font, Mode=TwoWay}"/>
                 </Grid>
-                <Label x:Name="L_Rate" Content="Tarif : 100DH" VerticalAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="3"/>
-                <Label x:Name="L_Price" Content="Prix : 80" VerticalAlignment="Center" HorizontalContentAlignment="Right"  Grid.Row="5" Grid.Column="4"/>
+                <Label x:Name="L_Rate" Content="Tarif : 100DH" VerticalAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="5" Grid.Column="3" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
+                <Label x:Name="L_Price" Content="Prix : 80" VerticalAlignment="Center" HorizontalContentAlignment="Right"  Grid.Row="5" Grid.Column="4" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
             </Grid>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Background="White" CornerRadius="5" Margin="50">
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Background="White" CornerRadius="5" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Seances non payées"/>
-                <DataGrid x:Name="DG_NotPaied" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1"/>
+                <Label Content="Seances non payées" FontSize="{Binding HeaderFont, Mode=TwoWay}" FontWeight="Bold"/>
+                <DataGrid x:Name="DG_NotPaied" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1" FontSize="{Binding Font, Mode=TwoWay}"/>
             </Grid>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1" Background="White" CornerRadius="5" Margin="50">
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1" Background="White" CornerRadius="5" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Historique des payements"/>
-                <DataGrid x:Name="DG_Paied" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1"/>
+                <Label Content="Historique des payements" FontSize="{Binding HeaderFont, Mode=TwoWay}" FontWeight="Bold"/>
+                <DataGrid x:Name="DG_Paied" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1" FontSize="{Binding Font, Mode=TwoWay}"/>
 
             </Grid>
         </Border>

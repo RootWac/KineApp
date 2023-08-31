@@ -27,9 +27,12 @@ namespace KineApp.PatientUI
     /// </summary>
     public partial class DisplayPatient : Page
     {
+        public int Font { get; set; } = 14;
+        public int TitleFont { get; set; } = 16;
+
         public IEnumerable<ISeries> Series { get; set; }
         = new GaugeBuilder()
-        .WithLabelsSize(50)
+        .WithLabelsSize(30)
         .WithInnerRadius(75)
         .WithBackgroundInnerRadius(75)
         .WithBackground(new SolidColorPaint(new SKColor(100, 181, 246, 90)))
@@ -50,12 +53,12 @@ namespace KineApp.PatientUI
             TotalPayement = new ObservableValue { Value = 0 };
             TotalAmount = new ObservableValue { Value = 0 };
             SeriesCost = new GaugeBuilder()
-            .WithLabelsSize(20)
+            .WithLabelsSize(Font * 0.8)
             .WithLabelsPosition(PolarLabelsPosition.Start)
             .WithLabelFormatter(point => $"{point.Context.Series.Name} {point.PrimaryValue}")
-            .WithInnerRadius(20)
-            .WithOffsetRadius(8)
-            .WithBackgroundInnerRadius(20)
+            .WithInnerRadius(TitleFont * 0.5)
+            .WithOffsetRadius(TitleFont * 0.25)
+            .WithBackgroundInnerRadius(TitleFont * 0.5)
 
             .AddValue(Amount, "Solde du")
             .AddValue(TotalPayement, "Payement")

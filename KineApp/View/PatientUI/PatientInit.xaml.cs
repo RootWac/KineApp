@@ -32,6 +32,7 @@ namespace KineApp.PatientUI
     {
         private static PatientInit _CurrentPage;
         private static Patient _SelectedPatient = null;
+        public int Font { get; set; } = 7;
 
         public static Patient SelectedPatient
         {

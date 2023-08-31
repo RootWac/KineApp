@@ -36,10 +36,10 @@
                         InitialRotation="-180"
                         MaxAngle="180"
                         Total="20" Margin="10,10,10,-109" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-                    <Label Content="Nombre de Seance:" HorizontalContentAlignment="Center" Grid.Row="1" VerticalContentAlignment="Bottom" FontSize="14" FontWeight="Bold"/>
-                    <Label Content="Total de minutes:" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Bottom" FontSize="14" FontWeight="Bold"/>
-                    <Label x:Name="L_SessionCount" Content="5" HorizontalContentAlignment="Center" Grid.Row="2" VerticalContentAlignment="Top" FontSize="14"/>
-                    <Label x:Name="L_SessionTime" Content="25min" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Top" FontSize="14"/>
+                    <Label Content="Nombre de Seance:" HorizontalContentAlignment="Center" Grid.Row="1" VerticalContentAlignment="Bottom" FontWeight="Bold" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <Label Content="Total de minutes:" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Bottom" FontWeight="Bold" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <Label x:Name="L_SessionCount" Content="5" HorizontalContentAlignment="Center" Grid.Row="2" VerticalContentAlignment="Top" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <Label x:Name="L_SessionTime" Content="25min" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Top" FontSize="{Binding Font, Mode=TwoWay}"/>
                 </Grid>
             </Border>
 
@@ -54,7 +54,7 @@
                         Series="{Binding SeriesCost}"
                         InitialRotation="90"
                         MaxAngle="270"
-                        Total="100" Margin="10" Grid.RowSpan="2"/>
+                        Total="100" Margin="10" Grid.RowSpan="2" FontSize="{Binding Font, Mode=TwoWay}"/>
                 </Grid>
             </Border>
             <Border Background="White" CornerRadius="30,30,30,30" Grid.Column="3" Grid.RowSpan="2" Margin="0,10,0,10">
@@ -64,13 +64,13 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <Grid>
-                        <Label Content="Seances Historique" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Margin="0,42,0,42" Height="50" />
-                        <ListBox Margin="10,110,10,10"/>
+                        <Label Content="Seances Historique" VerticalAlignment="Top" FontWeight="Bold" Margin="0,42,0,42" Height="50" FontSize="{Binding TitleFont, Mode=TwoWay}" />
+                        <ListBox Margin="10,110,10,10" FontSize="{Binding Font, Mode=TwoWay}"/>
                     </Grid>
                     <Grid Grid.Row="1">
-                        <Label Content="Fichiers Historique" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Margin="0,42,0,42" Height="50" Width="300" HorizontalAlignment="Left"/>
+                        <Label Content="Fichiers Historique" VerticalAlignment="Top" FontWeight="Bold" Margin="0,42,0,42" Height="50" Width="300" HorizontalAlignment="Left" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
                         <Image Source="/Resources/Add.png" HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Margin="0,42,0,0"/>
-                        <ListBox Margin="10,110,10,10"/>
+                        <ListBox Margin="10,110,10,10" FontSize="{Binding Font, Mode=TwoWay}"/>
                     </Grid>
                 </Grid>
             </Border>
@@ -84,10 +84,10 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Bilan" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" FontSize="30" FontWeight="Bold"/>
-                    <Label Content="Suivi" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" FontSize="30" FontWeight="Bold" Grid.Column="1"/>
-                    <TextBlock x:Name="TB_Bilan" TextWrapping="Wrap" Margin="23,4,5,5" FontSize="14" Grid.Row="1"/>
-                    <TextBlock x:Name="TB_Suivi" TextWrapping="Wrap" Margin="23,4,5,5" FontSize="14" Grid.Row="1" Grid.Column="1"/>
+                    <Label Content="Bilan" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" FontWeight="Bold" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
+                    <Label Content="Suivi" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" FontWeight="Bold" Grid.Column="1" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
+                    <TextBlock x:Name="TB_Bilan" TextWrapping="Wrap" Margin="23,4,5,5" FontSize="{Binding Font, Mode=TwoWay}" Grid.Row="1"/>
+                    <TextBlock x:Name="TB_Suivi" TextWrapping="Wrap" Margin="23,4,5,5" FontSize="{Binding Font, Mode=TwoWay}" Grid.Row="1" Grid.Column="1"/>
 
                 </Grid>
             </Border>

@@ -23,11 +23,20 @@
                         <DropShadowEffect BlurRadius="14" ShadowDepth="13" />
                     </Border.Effect>
                     <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="42*"/>
+                            <ColumnDefinition Width="228*"/>
+                            <ColumnDefinition Width="44*"/>
+                            <ColumnDefinition Width="68*"/>
+                            <ColumnDefinition Width="332*"/>
+                            <ColumnDefinition Width="71*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid Margin="50,100,50,100" TextElement.FontSize="12">
+                        <Grid Margin="10" TextElement.FontSize="12" Grid.Row="1" Grid.Column="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="2*"/>
@@ -40,21 +49,22 @@
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
 
-                            <TextBox x:Name="TB_Name" Text="" Grid.Column="1" TextWrapping="Wrap" Margin="8"/>
-                            <Label Content="Prenom :" HorizontalContentAlignment="Center" Margin="8"/>
-                            <TextBox x:Name="TB_LastName" Text="" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="8"/>
-                            <Label Content="Nom :" Grid.Row="1" HorizontalContentAlignment="Center" Margin="8"/>
-                            <DatePicker x:Name="DP_DateOfBirth"  Grid.Row="2" Grid.Column="1" Margin="8"/>
-                            <Label Content="Date :" Grid.Row="2" HorizontalContentAlignment="Center" Margin="8"/>
-                            <TextBox x:Name="TB_CIN" Text="" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Margin="8"/>
-                            <Label Content="CIN :" Grid.Row="3" HorizontalContentAlignment="Center" Margin="8"/>
-                            <TextBox x:Name="TB_PhoneNumber" Text="" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Margin="8"/>
-                            <Label Content="Tel :" Grid.Row="4" HorizontalContentAlignment="Center" Margin="8"/>
+                            <TextBox x:Name="TB_Name" Text="" Grid.Column="1" TextWrapping="Wrap" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <Label Content="Prenom :" HorizontalContentAlignment="Center" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <TextBox x:Name="TB_LastName" Text="" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <Label Content="Nom :" Grid.Row="1" HorizontalContentAlignment="Center" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <DatePicker x:Name="DP_DateOfBirth"  Grid.Row="2" Grid.Column="1" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <Label Content="Date :" Grid.Row="2" HorizontalContentAlignment="Center" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <TextBox x:Name="TB_CIN" Text="" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <Label Content="CIN :" Grid.Row="3" HorizontalContentAlignment="Center" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <TextBox x:Name="TB_PhoneNumber" Text="" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <Label Content="Tel :" Grid.Row="4" HorizontalContentAlignment="Center" Margin="8" FontSize="{Binding Font, Mode=TwoWay}"/>
                         </Grid>
-                        <Grid Margin="100" TextElement.FontSize="12" Grid.Column="1">
+                        <Grid Margin="10" TextElement.FontSize="12" Grid.Column="4" Grid.Row="1">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="104*"/>
+                                <ColumnDefinition Width="103*"/>
+                                <ColumnDefinition Width="105*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="2*"/>
@@ -63,25 +73,25 @@
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
 
-                            <Label Content="Adresse :" HorizontalContentAlignment="Left" Margin="8"/>
-                            <TextBox x:Name="TB_Address" Text="" Grid.Column="1" TextWrapping="Wrap" Margin="8"/>
+                            <Label Content="Adresse :" HorizontalContentAlignment="Left" Margin="8,8,8,8"  FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <TextBox x:Name="TB_Address" Text="" Grid.Column="1" TextWrapping="Wrap" Margin="8,8,8,8" FontSize="{Binding Font, Mode=TwoWay}" Grid.ColumnSpan="2"/>
 
-                            <Label Content="Sexe :" Grid.Row="1" HorizontalContentAlignment="Left" Margin="8"/>
-                            <WPF:SliderControl x:Name="SB_Gender" FontSize="24" LeftText="F" RightText="H" IsLeftVisible="False" Grid.Row="1" Grid.Column="1" Margin="10,17,121,18"/>
+                            <Label Content="Sexe :" Grid.Row="1" HorizontalContentAlignment="Left" Margin="8,8,8,8"  FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <WPF:SliderControl x:Name="SB_Gender" LeftText="F" RightText="H" IsLeftVisible="False" Grid.Row="1" Grid.Column="1" Margin="10"  FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                            <Label Content="Taille (cm)" Grid.Row="2" HorizontalContentAlignment="Left" Margin="8"/>
-                            <DockPanel Grid.Column="2" Grid.Row="2" Margin="0,0,0,10" Grid.ColumnSpan="2" >
-                                <TextBox x:Name="TB_CreateHeight" Text="{Binding ElementName=S_CreateHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="24" DockPanel.Dock="Right" TextAlignment="Right" Width="50" Height="46" />
-                                <Slider x:Name="S_CreateHeight" Maximum="250" Minimum="10" Value="160" FontSize="24" Height="30" HorizontalContentAlignment="Center" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True"/>
+                            <Label Content="Taille (cm)" Grid.Row="2" HorizontalContentAlignment="Left" Margin="8,8,8,8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <DockPanel Grid.Column="1" Grid.Row="2" Margin="10" Grid.ColumnSpan="2" >
+                                <TextBox x:Name="TB_CreateHeight" Text="{Binding ElementName=S_CreateHeight, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="50" FontSize="{Binding Font, Mode=TwoWay}"/>
+                                <Slider x:Name="S_CreateHeight" Maximum="250" Minimum="10" Value="160" HorizontalContentAlignment="Center" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}"/>
                             </DockPanel>
 
-                            <Label Content="Age :" Grid.Row="3" HorizontalContentAlignment="Left" Margin="8"/>
-                            <DockPanel Grid.Column="2" Grid.Row="8" Margin="0,0,0,10" Grid.ColumnSpan="2" >
-                                <TextBox x:Name="TB_CreateWeight" Text="{Binding ElementName=S_CreateWeight, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="24" DockPanel.Dock="Right" TextAlignment="Right" Width="50" Height="40" />
-                                <Slider x:Name="S_CreateWeight" Maximum="150" Minimum="0" Value="20" FontSize="24" Height="30" HorizontalContentAlignment="Center" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"/>
+                            <Label Content="Age :" Grid.Row="3" HorizontalContentAlignment="Left" Margin="8,8,8,8" FontSize="{Binding Font, Mode=TwoWay}"/>
+                            <DockPanel Grid.Column="1" Grid.Row="3" Margin="10" Grid.ColumnSpan="2" >
+                                <TextBox x:Name="TB_CreateWeight" Text="{Binding ElementName=S_CreateWeight, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="50" FontSize="{Binding Font, Mode=TwoWay}"/>
+                                <Slider x:Name="S_CreateWeight" Maximum="150" Minimum="0" Value="20" HorizontalContentAlignment="Center" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" FontSize="{Binding Font, Mode=TwoWay}"/>
                             </DockPanel>
                         </Grid>
-                        <Button Content="Ajouter" Margin="0,0,10,10" Width="100" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Click="B_Add_Click"/>
+                        <Button Content="Ajouter" Margin="0,0,10,10" Width="100" HorizontalAlignment="Right" Grid.Column="4" Click="B_Add_Click" Grid.Row="2" Grid.ColumnSpan="2"/>
                     </Grid>
                 </Border>
                 <Image Source="/Resources/partient.png" Margin="100"/>

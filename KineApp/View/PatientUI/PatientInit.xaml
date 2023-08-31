@@ -15,7 +15,8 @@
                 <ColumnDefinition Width="370*"/>
                 <ColumnDefinition Width="185*"/>
                 <ColumnDefinition Width="306*"/>
-                <ColumnDefinition Width="481*"/>
+                <ColumnDefinition Width="231*"/>
+                <ColumnDefinition Width="250*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="150*"/>
@@ -23,7 +24,7 @@
                 <RowDefinition Height="350*"/>
                 <RowDefinition Height="400*"/>
             </Grid.RowDefinitions>
-            <Border x:Name="B_PatientsList" Background="White" Width="200" HorizontalAlignment="Left" CornerRadius="30,30,30,30" Grid.RowSpan="4">
+            <Border x:Name="B_PatientsList" Background="White" CornerRadius="30,30,30,30" Grid.RowSpan="4" Margin="10,10,10,10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
@@ -31,10 +32,10 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Patient" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                    <Label Content="Patient" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}" FontWeight="Bold"/>
                     <Grid Grid.Row="1">
-                        <TextBox x:Name="TB_Search" Margin="0,0,0,1" TextChanged="TB_Search_TextChanged" />
-                        <TextBlock IsHitTestVisible="False" Margin="5,0,0,0" Text="Rechercher un patient" Foreground="DarkGray">
+                        <TextBox x:Name="TB_Search" Margin="0,0,0,1" TextChanged="TB_Search_TextChanged" FontSize="{Binding Font, Mode=TwoWay}"/>
+                        <TextBlock IsHitTestVisible="False" Margin="5,0,0,0" Text="Rechercher un patient" Foreground="DarkGray" FontSize="{Binding Font, Mode=TwoWay}">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -48,8 +49,8 @@
                         </TextBlock>
                     </Grid>
 
-                    <ListBox x:Name="LB_Patients" Grid.Row="2" SelectionChanged="L_Patients_SelectionChanged"/>
-                    <Button x:Name="B_Create" Content="Creer" Grid.Row="3" Click="B_Create_Click">
+                    <ListBox x:Name="LB_Patients" Grid.Row="2" SelectionChanged="L_Patients_SelectionChanged" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <Button x:Name="B_Create" Content="Creer" Grid.Row="3" Click="B_Create_Click" FontSize="{Binding Font, Mode=TwoWay}">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#FF079EFF"/>
@@ -72,11 +73,11 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1.8*"/>
                     </Grid.RowDefinitions>
-                    <Image x:Name="I_Gender_M" Width="75" Height="75" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Resources/M_User.png" Stretch="Fill" RenderTransformOrigin="1.821,0.692" Grid.RowSpan="2" Margin="10,-15,0,0"/>
-                    <Image x:Name="I_Gender_F" Width="75" Height="75" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Resources/F_User.png" Stretch="Fill" RenderTransformOrigin="1.821,0.692" Grid.RowSpan="2" Margin="10,-15,0,0"/>
-                    <Label x:Name="L_Name" Content="Prenom Nom" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
-                    <Label x:Name="L_Gender" Content="Feminin, 54ans" FontSize="14" FontWeight="Bold" Grid.Row="1" Grid.Column="1"/>
-                    <TextBlock x:Name="TB_Address" TextWrapping="Wrap" Text="34 rue les pyramides, casablanca, grand casablanca, maroc" Margin="23,4,5,5" FontSize="14" FontWeight="Bold" Grid.Row="2" Grid.ColumnSpan="2"/>
+                    <Image x:Name="I_Gender_M" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Resources/M_User.png" Stretch="Fill" Grid.RowSpan="2" Margin="10,-15,0,0"/>
+                    <Image x:Name="I_Gender_F" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Resources/F_User.png" Stretch="Fill" Grid.RowSpan="2" Margin="10,-15,0,0"/>
+                    <Label x:Name="L_Name" Content="Prenom Nom" FontSize="{Binding Font, Mode=TwoWay}" FontWeight="Bold" Grid.Column="1"/>
+                    <Label x:Name="L_Gender" Content="Feminin, 54ans" FontSize="{Binding Font, Mode=TwoWay}" FontWeight="Bold" Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock x:Name="TB_Address" TextWrapping="Wrap" Text="34 rue les pyramides, casablanca, grand casablanca, maroc" Margin="23,4,5,5" FontSize="{Binding Font, Mode=TwoWay}" FontWeight="Bold" Grid.Row="2" Grid.ColumnSpan="2"/>
                 </Grid>
             </Border>
             <Border x:Name="B_PatientNotes" Background="White" Margin="30,15,40,10" CornerRadius="10,10,10,30" Grid.Column="2" Grid.ColumnSpan="2" >
@@ -85,11 +86,11 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Notes de patient" Margin="25,0,0,0" FontSize="16" FontWeight="Bold"/>
-                    <TextBlock x:Name="TB_Notes" TextWrapping="Wrap" FontSize="14" FontWeight="Normal" Margin="50,10,10,10" Grid.Row="1"/>
+                    <Label Content="Notes de patient" Margin="25,0,0,0" FontSize="{Binding Font, Mode=TwoWay}" FontWeight="Bold"/>
+                    <TextBlock x:Name="TB_Notes" TextWrapping="Wrap" FontSize="{Binding Font, Mode=TwoWay}" FontWeight="Normal" Margin="50,10,10,10" Grid.Row="1"/>
                 </Grid>
             </Border>
-            <Border x:Name="B_PatientNextAppoitement" Background="White" Margin="2,15,300,10"  CornerRadius="10,10,10,30" Grid.Column="4" Grid.ColumnSpan="2" >
+            <Border x:Name="B_PatientNextAppoitement" Background="White" Margin="2,15,10,10"  CornerRadius="10,10,10,30" Grid.Column="4" Grid.ColumnSpan="2" >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -99,20 +100,20 @@
                     <ListBox x:Name="L_Appoitement" Margin="10" Grid.Column="1"/>
                 </Grid>
             </Border>
-            <Border x:Name="TaskBar" Background="White" CornerRadius="30,30,30,30" Margin="10,10,10,10" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5">
+            <Border x:Name="TaskBar" Background="White" CornerRadius="30,30,30,30" Margin="10,10,10,10" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6">
                 <DockPanel x:Name="DP_ToolbarPatient" IsEnabled="False" HorizontalAlignment="Left" Width="1552" Margin="10,10,10,10">
-                    <ToolBar HorizontalAlignment="Left" Width="300">
-                        <RadioButton x:Name="RB_Home" Width="60" Height="50" Checked="ToggleHome_Checked">
+                    <ToolBar x:Name="TLB_Patient" HorizontalAlignment="Left" Width="300">
+                        <RadioButton x:Name="RB_Home" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="ToggleHome_Checked">
                             <RadioButton.Background>
                                 <ImageBrush ImageSource="/Resources/Home.png" Stretch="Uniform"/>
                             </RadioButton.Background>
                         </RadioButton>
-                        <RadioButton x:Name="RB_Record" Width="60" Height="50" Checked="ToggleSession_Checked">
+                        <RadioButton x:Name="RB_Record" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="ToggleSession_Checked">
                             <RadioButton.Background>
                                 <ImageBrush ImageSource="/Resources/Notes.png" Stretch="Uniform"/>
                             </RadioButton.Background>
                         </RadioButton>
-                        <RadioButton x:Name="RB_Sessions" Width="60" Height="50" Checked="RB_Sessions_Checked">
+                        <RadioButton x:Name="RB_Sessions" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="RB_Sessions_Checked">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/History.png" Stretch="Uniform"/>
                             </ToggleButton.Background>
@@ -124,24 +125,24 @@
                         </RadioButton>
                     </ToolBar>
                     <ToolBar>
-                        <ToggleButton Width="60" Height="50">
+                        <ToggleButton Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/Events.png"/>
                             </ToggleButton.Background>
                         </ToggleButton>
-                        <ToggleButton Width="60" Height="50">
+                        <ToggleButton Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/Next Event.png"/>
                             </ToggleButton.Background>
                         </ToggleButton>
-                        <ToggleButton x:Name="TB_AddEvent" Width="60" Height="50" Click="TB_AddEvent_Click">
+                        <ToggleButton x:Name="TB_AddEvent" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Click="TB_AddEvent_Click">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/NewEvent.png" />
                             </ToggleButton.Background>
                         </ToggleButton>
                     </ToolBar>
                     <ToolBar>
-                        <ToggleButton Width="60" Height="50">
+                        <ToggleButton Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/UserEdit.png"/>
                             </ToggleButton.Background>
@@ -149,7 +150,7 @@
                     </ToolBar>
                 </DockPanel>
             </Border>
-            <Grid Grid.Column="5" HorizontalAlignment="Right" Margin="0,0,10,0" Width="140" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
+            <Grid Grid.Column="6" HorizontalAlignment="Left" Margin="100,0,0,128" Width="140" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Grid.RowSpan="2">
                 <Image Source="/Resources/Save.png" Stretch="Fill" Visibility="Hidden"/>
 
                 <Grid>
@@ -157,7 +158,7 @@
                 </Grid>
 
             </Grid>
-            <Grid Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="5">
+            <Grid Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="6">
                 <Frame x:Name="CreatePatient" Source="/View/PatientUI/PatientCreator.xaml" Visibility="Hidden"/>
                 <Frame x:Name="DisplayPatient" Source="/View/PatientUI/DisplayPatient.xaml" Visibility="Hidden"/>
                 <Frame x:Name="BillingPatient" Source="/View/PatientUI/BillingPatient.xaml" Visibility="Hidden"/>
@@ -165,6 +166,6 @@
                 <Frame x:Name="SessionPatient" Source="/View/PatientUI/SessionPatient.xaml" Visibility="Hidden"/>
             </Grid>
         </Grid>
-        
+
     </Grid>
 </Page>

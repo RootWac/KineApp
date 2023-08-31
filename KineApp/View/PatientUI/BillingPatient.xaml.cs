@@ -25,10 +25,15 @@ namespace KineApp.View.PatientUI
     /// </summary>
     public partial class BillingPatient : Page
     {
+        public int HeaderFont { get; set; } = 14;
+        public int TitleFont { get; set; } = 12;
+        public int Font { get; set; } = 8;
         Patient CurrentPatient = null;
+
         public BillingPatient()
         {
             InitializeComponent();
+            DataContext = this;
             CBB_DiscountType.Items.Add("%");
             CBB_DiscountType.Items.Add("DH");
         }
