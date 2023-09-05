@@ -28,7 +28,7 @@ namespace KineApp.Model
             get { return LastName + " " + FirstName; }
         }
 
-        public Dictionary<DateTime, Record> AllRecords = new Dictionary<DateTime, Record>();
+        public Dictionary<int, Record> AllRecords = new Dictionary<int, Record>();
         public Record CurrentRecord;
 
         public Patient()
@@ -73,7 +73,7 @@ namespace KineApp.Model
             DateTime CloseDate = DateTime.Now;
             if(CurrentRecord.Finish(CloseDate))
             {
-                AllRecords.Add(CloseDate, CurrentRecord);
+                //AllRecords.Add(CurrentRecord.Id, CurrentRecord);
                 CurrentRecord = null; 
             }
         }

@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KineApp.View.PatientUI"
       xmlns:Widget="clr-namespace:AM.Widget.WPF;assembly=AM.Widget"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1200"
       Title="SessionPatient" IsVisibleChanged="Page_IsVisibleChanged">
@@ -38,31 +39,34 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Title :" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}"/>
-                <TextBox x:Name="TB_Tilte" Grid.Column="1" TextWrapping="Wrap" Text="Seance numero 2" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <Label Content="Ajouter une seance" Grid.ColumnSpan="2" FontSize="{Binding TitleFont, Mode=TwoWay}" FontWeight="Bold"/>
+                
+                <Label Content="Title :" Grid.Row="1" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <TextBox x:Name="TB_Tilte" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="Seance numero 2" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                <Label Content="Temps (minute) :" VerticalContentAlignment="Center" Grid.Row="1" FontSize="{Binding Font, Mode=TwoWay}"/>
-                <DockPanel Grid.Column="2" Grid.Row="1" Margin="0,0,0,10" Grid.ColumnSpan="2" >
+                <Label Content="Temps (minute) :" VerticalContentAlignment="Center" Grid.Row="2" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <DockPanel Grid.Column="2" Grid.Row="2" Margin="0,0,0,10" Grid.ColumnSpan="2" >
                     <TextBox x:Name="TB_SessionTime" Text="{Binding ElementName=S_SessionTime, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="{Binding Font, Mode=TwoWay}" DockPanel.Dock="Right" TextAlignment="Right" Width="50" Height="46" />
                     <Slider x:Name="S_SessionTime" Maximum="120" Minimum="1" Value="30" FontSize="{Binding Font, Mode=TwoWay}" Height="30" HorizontalContentAlignment="Center" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True"/>
                 </DockPanel>
-                <Label Content="Rendez-vous :" Grid.Row="2" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}" />
-                <ComboBox x:Name="CB_Appoitement" Grid.Column="1" Grid.Row="2" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <Label Content="Rendez-vous :" Grid.Row="3" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}" />
+                <ComboBox x:Name="CB_Appoitement" Grid.Column="1" Grid.Row="3" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                <Label Content="Tarif :" Grid.Row="3" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}"/>
-                <TextBox x:Name="TB_Price" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <Label Content="Tarif :" Grid.Row="4" VerticalContentAlignment="Center" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <TextBox x:Name="TB_Price" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="" Margin="5" Height="30" FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                <Label Content="Decription :" Grid.Row="4" FontSize="{Binding Font, Mode=TwoWay}"/>
-                <TextBox x:Name="TB_Description" AcceptsReturn="True" TextWrapping="Wrap" Text="" Grid.Row="4" Margin="15,40,15,15" Grid.ColumnSpan="3" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <Label Content="Decription :" Grid.Row="5" FontSize="{Binding Font, Mode=TwoWay}"/>
+                <TextBox x:Name="TB_Description" AcceptsReturn="True" TextWrapping="Wrap" Text="" Grid.Row="5" Margin="15,40,15,15" Grid.ColumnSpan="3" FontSize="{Binding Font, Mode=TwoWay}"/>
 
-                <Button Content="Ajouter" Width="120" HorizontalAlignment="Right" Margin="0,0,5,5" Grid.Row="5" Grid.Column="1" MaxHeight="40" Click="B_AddSession_Click" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
+                <Button Content="Ajouter" Width="120" HorizontalAlignment="Right" Margin="0,0,5,5" Grid.Row="6" Grid.Column="1" MaxHeight="40" Click="B_AddSession_Click" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
             </Grid>
         </Border>
 
-        <Border Background="White" Grid.Column="3" Grid.Row="1" Margin="5" CornerRadius="5">
+        <Border Background="White" Grid.Column="5" Grid.Row="1" Margin="5" CornerRadius="5">
             <Grid x:Name="G_LasSession" Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
@@ -70,7 +74,7 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Derniere seance" FontSize="{Binding TTitleFont, Mode=TwoWay}" FontWeight="Bold"/>
+                <Label Content="Derniere seance" FontSize="{Binding TitleFont, Mode=TwoWay}" FontWeight="Bold"/>
                 <Label x:Name="L_SessionNumber" Content="Seance numero 1" FontSize="{Binding Font, Mode=TwoWay}" Grid.Row="1"/>
                 <ProgressBar Grid.Row="2" Value="100" Margin="5,5,100,5" FontSize="{Binding Font, Mode=TwoWay}"/>
                 <Label x:Name="L_SessionTime" Grid.Row="2" HorizontalAlignment="Right" Content="30min" FontSize="{Binding Font, Mode=TwoWay}"/>
@@ -78,24 +82,59 @@
             </Grid>
         </Border>
 
-        <Border Background="White" Grid.Row="3" Grid.Column="3" Margin="5" CornerRadius="5">
+        <Border Background="White" Grid.Row="3" Grid.Column="5" Margin="5" CornerRadius="5">
             <Grid Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Nombre total de seance" FontSize="{Binding TitleFont, Mode=TwoWay}" FontWeight="Bold"/>
+                <Label x:Name="L_Total" Content="Nombre total de seance prescrit :" FontSize="{Binding TitleFont, Mode=TwoWay}" FontWeight="Bold"/>
+                <lvc:PieChart
+                        x:Name="PC_Session"
+                        Series="{Binding Series}"
+                        Grid.Row="1"
+                        InitialRotation="-180"
+                        MaxAngle="180"
+                        Total="20" Margin="10,10,10,-109" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
             </Grid>
         </Border>
 
-        <Border Background="White" Grid.Row="1" Grid.RowSpan="3" Grid.Column="5" Margin="5" CornerRadius="5">
+        <Border Background="White" Grid.Row="1" Grid.RowSpan="3" Grid.Column="3" Margin="5" CornerRadius="5">
             <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Historique" FontSize="{Binding TitleFont, Mode=TwoWay}" FontWeight="Bold"/>
-                <DockPanel LastChildFill="False" Grid.Row="1"/>
+                <Label Content="Historique" FontSize="{Binding TitleFont, Mode=TwoWay}" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                <DockPanel LastChildFill="False" Grid.ColumnSpan="2" Margin="0,29,0,29" Grid.RowSpan="3"/>
+                <Grid x:Name="G_HistorySession" Margin="10" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="L_HistorySessionNumber" Content="Aucune séance" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <ProgressBar Grid.Row="1" Value="0" Margin="5,5,100,5" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <Label x:Name="L_HistorySessionTime" Grid.Row="1" HorizontalAlignment="Right" Content="0 min" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <TextBox x:Name="TB_HistoryDescriptionView" IsReadOnly="True" TextWrapping="Wrap" Text="" Grid.Row="2" FontSize="{Binding Font, Mode=TwoWay}"/>
+                </Grid>
+                <ListBox x:Name="LB_HistorySession" Grid.ColumnSpan="2" Margin="10" Grid.Row="2" SelectionChanged="LB_HistorySession_SelectionChanged"/>
+                <Button x:Name="B_Previous" Grid.Row="3" Click="B_Previous_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resources/Previous.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="B_Next" Grid.Row="3" Grid.Column="1" Click="B_Next_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resources/Next.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
             </Grid>
         </Border>
     </Grid>

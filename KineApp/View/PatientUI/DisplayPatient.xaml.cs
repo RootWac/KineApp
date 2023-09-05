@@ -132,6 +132,18 @@ namespace KineApp.PatientUI
             TB_Suivi.Text = Value.CurrentRecord.Follow;
 
             PC_Cost.Total = Value.CurrentRecord.GetTotalAmount;
+
+            LB_OldReport.Items.Clear();
+            foreach(var val in Value.AllRecords)
+            {
+                if (val.Value.Id != Value.CurrentRecord.Id)
+                {
+                    ListBoxItem item = new ListBoxItem();
+                    item.Content = val.Value.Title + ": " + val.Value.Begin;
+                    item.Background = val.Value.End != DateTime.MinValue ? Brushes.Red : Brushes.Green;
+                    LB_OldReport.Items.Add(item);
+                }
+            }
         }
         #endregion
 

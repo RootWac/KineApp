@@ -101,8 +101,8 @@
                 </Grid>
             </Border>
             <Border x:Name="TaskBar" Background="White" CornerRadius="30,30,30,30" Margin="10,10,10,10" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6">
-                <DockPanel x:Name="DP_ToolbarPatient" IsEnabled="False" HorizontalAlignment="Left" Width="1552" Margin="10,10,10,10">
-                    <ToolBar x:Name="TLB_Patient" HorizontalAlignment="Left" Width="300">
+                <DockPanel x:Name="DP_ToolbarPatient" IsEnabled="False" HorizontalAlignment="Left" Width="1900" Margin="10,10,10,10">
+                    <ToolBar x:Name="TLB_Patient">
                         <RadioButton x:Name="RB_Home" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="ToggleHome_Checked">
                             <RadioButton.Background>
                                 <ImageBrush ImageSource="/Resources/Home.png" Stretch="Uniform"/>
@@ -118,7 +118,7 @@
                                 <ImageBrush ImageSource="/Resources/History.png" Stretch="Uniform"/>
                             </ToggleButton.Background>
                         </RadioButton>
-                        <RadioButton x:Name="RB_Billing" Width="60" Height="50" Checked="ToggleBilling_Checked">
+                        <RadioButton x:Name="RB_Billing" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}"  Checked="ToggleBilling_Checked">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/Facturation.jpg" Stretch="Uniform"/>
                             </ToggleButton.Background>

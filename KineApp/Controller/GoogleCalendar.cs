@@ -22,7 +22,6 @@ namespace KineApp.Controller
     class GoogleCalendar
     {
         static CalendarService service;
-        public static Events events;
         public static Dictionary<string, string> colors = new Dictionary<string, string>();
         public static bool SyncInProgress = false;
         public static bool StopSync = false;
@@ -100,15 +99,28 @@ namespace KineApp.Controller
 
                 List<Meeting> Meet = (List<Meeting>)meetObject;
                 var calendar = GetCalendar();
-                var allevents = service.Events.List(calendar.Id).Execute();
+                var allevents = GetAllEvents();
 
                 foreach (var met in Meet)
                 {
                     if (StopSync) break;
+                    if (met.Begin < DateTime.Now.Date.AddDays(-7)) continue;
                     UpdateOrInsert(allevents, calendar.Id, met);
                 }
 
-                SyncInProgress =false;
+                foreach (var ev in allevents)
+                {
+                    var SummarySplit = ev.Summary.Split(new string[] { " - " }, StringSplitOptions.None);
+                    int MeetingID = int.Parse(SummarySplit[0].Substring(1));
+                    var PatientName = SummarySplit[1];
+
+                    //var isExist = Meet.Select(var => (int)var.MeetingID).ToList().Contains(MeetingID);
+                    var isExist = Meet.Where(var => (int)var.MeetingID == MeetingID && var.PatientName == PatientName).Count() > 0;
+
+                    if (!isExist && Meet.Count>0) Delete(calendar, ev);
+                }
+
+                SyncInProgress=false;
             }
             catch (Exception ex) { Log.Write(ex.ToString(), LogStatus.Critical); }
         }
@@ -120,11 +132,21 @@ namespace KineApp.Controller
         internal static void Delete(int value)
         {
             var calendar = GetCalendar();
-            var allevents = service.Events.List(calendar.Id).Execute();
+            var allevents = GetAllEvents();
 
             Event event1 = SearchEvent(allevents, value);
-            if(event1 != null) service.Events.Delete(calendar.Id, event1.Id).Execute();
+            if (event1 != null) service.Events.Delete(calendar.Id, event1.Id).Execute();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        internal static void Delete(CalendarListEntry calendar, Event value)
+        {
+            if (value != null) service.Events.Delete(calendar.Id, value.Id).Execute();
+        }
+
 
         /// <summary>
         /// 
@@ -145,7 +167,7 @@ namespace KineApp.Controller
             {
                 Meeting value = (Meeting)meetObject;
                 var calendar = GetCalendar();
-                var allevents = service.Events.List(calendar.Id).Execute();
+                var allevents = GetAllEvents();
                 UpdateOrInsert(allevents, calendar.Id, value);
             }
             catch (Exception ex) { Log.Write(ex.ToString(), LogStatus.Critical); }
@@ -162,12 +184,29 @@ namespace KineApp.Controller
         }
 
         /// <summary>
-        /// 
+        /// Get the appropriate calendar
         /// </summary>
-        private static void Refresh()
+        /// <returns></returns>
+        private static List<Event> GetAllEvents()
         {
+            List<Event> list = new List<Event>();
             var calendar = GetCalendar();
-            events = service.Events.List(calendar.Id).Execute();
+            
+            string pageToken = null;
+            do
+            {
+                var events = service.Events.List(calendar.Id);
+                events.PageToken = pageToken;
+
+                var eventsResult = events.Execute();
+
+                foreach(var ev in eventsResult.Items) { list.Add(ev); }
+
+                pageToken = eventsResult.NextPageToken;
+            } while (pageToken != null);
+
+
+            return list;
         }
 
         /// <summary>
@@ -176,7 +215,7 @@ namespace KineApp.Controller
         /// <param name="allevents"></param>
         /// <param name="CalendarId"></param>
         /// <param name="met"></param>
-        private static void UpdateOrInsert(Events allevents, string CalendarId, Meeting met)
+        private static void UpdateOrInsert(List<Event> allevents, string CalendarId, Meeting met)
         {
             try
             {
@@ -223,7 +262,6 @@ namespace KineApp.Controller
             //ev.ColorId = met.Color.ToString();
 
             service.Events.Insert(ev, calendar.Id).Execute();
-            Refresh();
         }
 
         /// <summary>
@@ -232,20 +270,21 @@ namespace KineApp.Controller
         /// <param name="allevents"></param>
         /// <param name="met"></param>
         /// <returns></returns>
-        private static Event SearchEvent(Events allevents, int meeting_id)
+        private static Event SearchEvent(List<Event> allevents, int meeting_id)
         {
-            foreach (var ev in allevents.Items)
+            List<int> values = new List<int>();
+            foreach (var ev in allevents)
             {
                 try
                 {
                     var SummarySplit = ev.Summary.Split(new string[] { " - " }, StringSplitOptions.None);
                     var MeetingID = int.Parse(SummarySplit[0].Substring(1));
-                    var PatientName = SummarySplit[2];
+                    var PatientName = SummarySplit[1];
                     var Title = SummarySplit[2];
                     var Note = ev.Description;
                     var StartDate = ev.Start.DateTime;
                     var EndDate = ev.End.DateTime;
-
+                    values.Add(MeetingID);
                     if (meeting_id == MeetingID)
                     {
                         return ev;

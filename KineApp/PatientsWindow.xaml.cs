@@ -76,7 +76,7 @@ namespace KineApp
             Style dropShadowScrollViewerStyle = new Style(typeof(Image));
             dropShadowScrollViewerStyle.Setters.Add(effectSetter);
 
-            I_Search.Resources.Add(typeof(Image), dropShadowScrollViewerStyle);
+            I_Note.Resources.Add(typeof(Image), dropShadowScrollViewerStyle);
             I_Patient.Resources.Add(typeof(Image), dropShadowScrollViewerStyle);
             I_Calendar.Resources.Add(typeof(Image), dropShadowScrollViewerStyle);
             I_Unk.Resources.Add(typeof(Image), dropShadowScrollViewerStyle);
@@ -122,7 +122,7 @@ namespace KineApp
         /// <param name="e"></param>
         private void Border_MouseEnter(object sender, MouseEventArgs e)
         {
-            (sender as Border).Background = new SolidColorBrush(Color.FromArgb(255, 255, 128, 0));
+            (sender as Grid).Background = new SolidColorBrush(Color.FromArgb(255, 255, 128, 0));
         }
 
 
@@ -133,7 +133,7 @@ namespace KineApp
         /// <param name="e"></param>
         private void Border_MouseLeave(object sender, MouseEventArgs e)
         {
-            (sender as Border).Background = null;
+            (sender as Grid).Background = null;
         }
 
         /// <summary>

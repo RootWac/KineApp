@@ -129,7 +129,7 @@ namespace KineApp.Controller
         {
             bool IsSuccess = false;
             string query = "INSERT INTO `" + Database + "`.`patients`(`firstname`, `lastname`, `address`, `cin`, `dateofbirth`, `phone`, `height`, `weight`, `gender`) " +
-                "VALUES ('" + newPatient.FirstName + "', '" + newPatient.LastName + "', '" + newPatient.Address + "', '" + newPatient.CIN + "', '" + newPatient.DateOfBirth + "', '" + newPatient.Phone + "', '" + newPatient.Height + "', '" + newPatient.Weight + "', '" + newPatient.Gender + "'); ";
+                "VALUES ('" + newPatient.FirstName + "', '" + newPatient.LastName + "', '" + newPatient.Address + "', '" + newPatient.CIN + "', '" + newPatient.DateOfBirth.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + newPatient.Phone + "', '" + newPatient.Height + "', '" + newPatient.Weight + "', '" + newPatient.Gender + "'); ";
 
             try
             {
@@ -180,33 +180,45 @@ namespace KineApp.Controller
                     MySqlConnection connection = new MySqlConnection(getConnectionQuery(3));
                     connection.Open();
 
-                    query = "SELECT * FROM center.record where patientid = " + patient.Id + " and end is null;";
+                    query = "SELECT * FROM center.record where patientid = " + patient.Id + ";";
 
                     //Create Command
                     MySqlCommand cmd = new MySqlCommand(query, connection);
 
                     //Create a data reader and Execute the command
                     MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    patient.AllRecords.Clear();
+
                     int id = -1, price = 0, numberprescribedsession = 0;
-                    string follow = "", balancesheet = "";
-                    DateTime begin = DateTime.MinValue;
+                    string follow = "", balancesheet = "", title = "";
+                    DateTime begin = DateTime.MinValue, end = DateTime.MinValue;
                     while (dataReader.Read())
                     {
                         id = (int)dataReader["id"];
+                        title = dataReader["title"].ToString();
                         begin = (DateTime)dataReader["begin"];
+                        end = dataReader["end"].ToString() != "" ? (DateTime)dataReader["end"] : DateTime.MinValue;
                         numberprescribedsession = (int)dataReader["numberprescribedsession"];
                         price = (int)dataReader["price"];
                         follow = dataReader["follow"].ToString();
                         balancesheet = dataReader["balancesheet"].ToString();
+
+                        Record record = new Record();
+
+
+                        if (id > 0 && patient.CurrentRecord == null && end == DateTime.MinValue)
+                        {
+                            record.InitializeDB(id, title, begin, numberprescribedsession, price, follow, balancesheet);
+                            patient.CurrentRecord = record;
+                        }
+                        else
+                            record.InitializeDB(id, title, begin, numberprescribedsession, price, follow, balancesheet, end);
+
+                        patient.AllRecords.Add(id, record);
                     }
 
-                    dataReader.Close();
-
-                    if (id > 0)
-                    {
-                        patient.CurrentRecord = new Record();
-                        patient.CurrentRecord.InitializeDB(id, begin, numberprescribedsession, price, follow, balancesheet);
-                    }
+                    dataReader.Close();                 
                 }
             }
             catch (MySqlException ex)
@@ -232,7 +244,7 @@ namespace KineApp.Controller
         /// 
         /// </summary>
         /// <returns></returns>
-        internal bool CreateRecord(Patient patient, int price, int numberprescribedsession, string follow, string balancesheet)
+        internal bool CreateRecord(Patient patient, string title, int price, int numberprescribedsession, string follow, string balancesheet)
         {
             try
             {
@@ -242,9 +254,10 @@ namespace KineApp.Controller
 
                 // Update DB
                 MySqlCommand InsertQuery = connection.CreateCommand();
-                InsertQuery.CommandText = "INSERT INTO " + Database + ".record (patientid, price, numberprescribedsession, follow, balancesheet, begin) VALUES(@patientid, @price, @numberprescribedsession, @follow, @balancesheet, now())";
+                InsertQuery.CommandText = "INSERT INTO " + Database + ".record (patientid, title, price, numberprescribedsession, follow, balancesheet, begin) VALUES(@patientid, @title, @price, @numberprescribedsession, @follow, @balancesheet, now())";
 
                 InsertQuery.Parameters.AddWithValue("@patientid", patient.Id);
+                InsertQuery.Parameters.AddWithValue("@title", title);
                 InsertQuery.Parameters.AddWithValue("@price", price);
                 InsertQuery.Parameters.AddWithValue("@numberprescribedsession", numberprescribedsession);
                 InsertQuery.Parameters.AddWithValue("@balancesheet", balancesheet);
@@ -294,7 +307,7 @@ namespace KineApp.Controller
         /// 
         /// </summary>
         /// <param name="record"></param>
-        internal bool UpdateRecord(Patient patient, int price, int numberprescribedsession, string follow, string balancesheet)
+        internal bool UpdateRecord(Patient patient, string title, int price, int numberprescribedsession, string follow, string balancesheet)
         {
             try
             {
@@ -304,9 +317,10 @@ namespace KineApp.Controller
 
                 // Update DB
                 MySqlCommand InsertQuery = connection.CreateCommand();
-                InsertQuery.CommandText = "UPDATE `" + Database + "`.`record` SET price=@price, numberprescribedsession=@numberprescribedsession, follow=@follow, balancesheet=@balancesheet WHERE id =@id";
+                InsertQuery.CommandText = "UPDATE `" + Database + "`.`record` SET price=@price, title=@title, numberprescribedsession=@numberprescribedsession, follow=@follow, balancesheet=@balancesheet WHERE id =@id";
                 
                 InsertQuery.Parameters.AddWithValue("@id", patient.CurrentRecord.Id);
+                InsertQuery.Parameters.AddWithValue("@title", title);
                 InsertQuery.Parameters.AddWithValue("@price", price);
                 InsertQuery.Parameters.AddWithValue("@numberprescribedsession", numberprescribedsession);
                 InsertQuery.Parameters.AddWithValue("@follow", follow);
@@ -453,12 +467,12 @@ namespace KineApp.Controller
                 string AppoitementColor = ((Value.Color != null) ? Value.Color.ToString() : Brushes.Black.ToString());
                 if ((int)Value.MeetingID != -1)
                 {
-                    InsertQuery.CommandText = "UPDATE `" + Database + "`.`appointement` SET recordid=@recordid, title=@Name, description=@Notes, begin=@BeginDate, end=@EndDate, color=@Color, location=@Location, recurrencedata=@RecurrenceData WHERE id =@id";
+                    InsertQuery.CommandText = "UPDATE `" + Database + "`.`appointements` SET recordid=@recordid, title=@Name, description=@Notes, begin=@BeginDate, end=@EndDate, color=@Color, location=@Location, recurrencedata=@RecurrenceData WHERE id =@id";
                     InsertQuery.Parameters.AddWithValue("@id", Value.MeetingID);
                 }
                 else
                 {
-                    InsertQuery.CommandText = "INSERT INTO " + Database + ".appointement (recordid, title, description, begin, end, color, location, recurrencedata) VALUES(@recordid, @Name, @Notes, @BeginDate, @EndDate, @Color, @Location, @RecurrenceData)";
+                    InsertQuery.CommandText = "INSERT INTO " + Database + ".appointements (recordid, title, description, begin, end, color, location, recurrencedata) VALUES(@recordid, @Name, @Notes, @BeginDate, @EndDate, @Color, @Location, @RecurrenceData)";
                 }
 
                 InsertQuery.Parameters.AddWithValue("@recordid", Value.PatientID);

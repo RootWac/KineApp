@@ -1,0 +1,2 @@
+- Add the admin patient page (Update patient informations)
+- Add function for the two calendar icon in the toolbar of the patient page 

@@ -13,8 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AM.Widget.WPF;
+using Google.Protobuf.WellKnownTypes;
 using KineApp.Controller;
 using KineApp.Model;
+using LiveChartsCore;
+using LiveChartsCore.Defaults;
+using LiveChartsCore.Measure;
+using LiveChartsCore.SkiaSharpView.Painting;
+using LiveChartsCore.SkiaSharpView;
+using SkiaSharp;
 
 namespace KineApp.View.PatientUI
 {
@@ -25,7 +32,19 @@ namespace KineApp.View.PatientUI
     {
         public int TitleFont { get; set; } = 16;
         public int Font { get; set; } = 14;
+
+        public IEnumerable<ISeries> Series { get; set; }
+        = new GaugeBuilder()
+        .WithLabelsSize(30)
+        .WithInnerRadius(75)
+        .WithBackgroundInnerRadius(75)
+        .WithBackground(new SolidColorPaint(new SKColor(100, 181, 246, 90)))
+        .WithLabelsPosition(PolarLabelsPosition.ChartCenter)
+        .AddValue(5, "Nombre de seances", SKColors.YellowGreen, SKColors.Red) // defines the value and the color 
+        .BuildSeries();
+
         Patient SelectedPatient;
+
         public SessionPatient()
         {
             TitleFont = (int)(TitleFont * Data.ZOOM);
@@ -51,6 +70,18 @@ namespace KineApp.View.PatientUI
                 TB_DescriptionView.Text = last_session.Description;
                 L_SessionNumber.Content = last_session.Title;
                 L_SessionTime.Content = last_session.SessionTime.TotalMinutes.ToString("F0");
+
+                foreach(var value in selectedPatient.CurrentRecord.ListOfSession)
+                {
+                    LB_HistorySession.Items.Add(value.Date.ToString() + " " + value.Title);
+                }
+                LB_HistorySession.SelectedIndex = 0;
+
+                PC_Session.Total = selectedPatient.CurrentRecord.NumberPrescribedSession;
+                var sessionCollection = (ICollection<ObservableValue>)Series.First().Values;
+                sessionCollection.First().Value = selectedPatient.CurrentRecord.ListOfSession.Count;
+
+                L_Total.Content = "Nombre total de seance prescrit : " + selectedPatient.CurrentRecord.NumberPrescribedSession;
             }
             else
             {
@@ -94,6 +125,35 @@ namespace KineApp.View.PatientUI
                 CB_Appoitement.SelectedIndex = 0;
                 CB_Appoitement.Items.Add(item);
                 S_SessionTime.Value = (validappoitement[0].End - validappoitement[0].Begin).TotalMinutes;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LB_HistorySession_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var value = SelectedPatient.CurrentRecord.ListOfSession[LB_HistorySession.SelectedIndex];
+            TB_HistoryDescriptionView.Text = value.Description;
+            L_HistorySessionNumber.Content = value.Title;
+            L_HistorySessionTime.Content = value.SessionTime.TotalMinutes.ToString("F0");
+        }
+
+        private void B_Next_Click(object sender, RoutedEventArgs e)
+        {
+            if (LB_HistorySession.SelectedIndex < SelectedPatient.CurrentRecord.ListOfSession.Count - 1)
+            {
+                LB_HistorySession.SelectedIndex = LB_HistorySession.SelectedIndex + 1;
+            }
+        }
+
+        private void B_Previous_Click(object sender, RoutedEventArgs e)
+        {
+            if (LB_HistorySession.SelectedIndex > 0)
+            {
+                LB_HistorySession.SelectedIndex = LB_HistorySession.SelectedIndex - 1;
             }
         }
     }

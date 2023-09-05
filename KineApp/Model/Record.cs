@@ -11,6 +11,7 @@ namespace KineApp.Model
     {
         public int Id;
         public int Price = 120;
+        public string Title = "";
         public string Follow = "";
         public string Balancesheet = "";
 
@@ -18,7 +19,7 @@ namespace KineApp.Model
         public List<Session> ListOfSession { get; private set; }
         public int NumberPrescribedSession { get; private set; }
         public DateTime Begin { get;  private set; }
-        public DateTime End { get; private set; }
+        public DateTime End { get; private set; } = DateTime.MinValue;
 
         /// <summary>
         /// 
@@ -36,9 +37,10 @@ namespace KineApp.Model
         /// <summary>
         /// 
         /// </summary>
-        public void InitializeDB(int Id, DateTime Begin, int NumberPrescribedSession, int Price, string Follow, string Balancesheet)
+        public void InitializeDB(int Id, string Title, DateTime Begin, int NumberPrescribedSession, int Price, string Follow, string Balancesheet)
         {
             this.Id = Id;
+            this.Title = Title;
             this.Price = Price;
             Next_Appoitements = new HashSet<Meeting>();
             this.NumberPrescribedSession = NumberPrescribedSession;
@@ -51,17 +53,25 @@ namespace KineApp.Model
         /// <summary>
         /// 
         /// </summary>
+        public void InitializeDB(int Id, string Title, DateTime Begin, int NumberPrescribedSession, int Price, string Follow, string Balancesheet, DateTime End)
+        {
+            InitializeDB(Id, Title, Begin, NumberPrescribedSession, Price, Follow, Balancesheet);
+            this.End = End;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="Report"></param>
         /// <param name="Follow"></param>
         public bool Finish(DateTime CloseDate)
         {
-            End = CloseDate;
             if (SQL.Connection.CloseRecord(this))
             {
+                End = CloseDate;
                 return true;
             }
 
-            End = DateTime.MaxValue;
             return false;
         }
 

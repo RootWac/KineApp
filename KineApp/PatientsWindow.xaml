@@ -27,21 +27,21 @@
             </Grid>
         </Border>
 
-        <Border MouseEnter="Menu_MouseEnter" MouseLeave="Menu_MouseLeave" Grid.Row="0" Grid.RowSpan="3">
+        <Border x:Name="B_Menu" MouseEnter="Menu_MouseEnter" MouseLeave="Menu_MouseLeave" Grid.Row="0" Grid.RowSpan="3">
             <Border.Effect>
-                <DropShadowEffect ShadowDepth="2" />
+                <DropShadowEffect ShadowDepth="1" />
             </Border.Effect>
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF54A7F9" Offset="1"/>
-                    <GradientStop Color="#FFD6F4FF" Offset="0.01"/>
-                    <GradientStop Color="#FFC0DEE4" Offset="0.99"/>
+                    <GradientStop Color="#FF0080FF" Offset="1"/>
+                    <GradientStop Color="#FFA7E1FF" Offset="0"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical" Background="#FFA4A4A5" Visibility="Visible">
-                <ToolBar>
+
+            <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical" Visibility="Visible" Background="#05EEF5FD">
+                <ToolBar Width="{Binding ElementName=B_Menu, Path=ActualWidth}" Height="{Binding ElementName=B_Menu, Path=ActualHeight}" Background="#05EEF5FD">
                     <Grid MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
-                        <Image ToolTip="Creer ou ouvrir un dossier patient" Height="80" Width="80" Margin="10" Source="/Resources/partient.png" MouseDown="I_Patient_MouseDown"/>
+                        <Image ToolTip="Creer ou ouvrir un dossier patient" Height="80" Margin="10" Source="/Resources/partient.png" MouseDown="I_Patient_MouseDown"/>
                     </Grid>
 
                     <Grid MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave"  Visibility="Collapsed">
@@ -67,7 +67,7 @@
             </ToolBarTray>
         </Border>
 
-        <Border MouseEnter="Menu_MouseEnter" MouseLeave="Menu_MouseLeave" Grid.Row="0" Grid.RowSpan="3" Visibility="Visible">
+        <Border MouseEnter="Menu_MouseEnter" MouseLeave="Menu_MouseLeave" Grid.Row="0" Grid.RowSpan="3" Visibility="Hidden" d:IsHidden="True">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="1" />
             </Border.Effect>
@@ -77,7 +77,7 @@
                     <GradientStop Color="#FFA7E1FF" Offset="0"/>
                 </LinearGradientBrush>
             </Border.Background>
-            
+
             <Grid x:Name="G_Menu">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
@@ -89,18 +89,18 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" Padding="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" BorderBrush="#7F000000" BorderThickness="1,1,1,1">
-                    <Image x:Name="I_Search" Source="/Resources/partient.png" Stretch="Fill" MouseDown="I_Patient_MouseDown"/>
+                    <Image x:Name="I_Patient" ToolTip="Creer ou ouvrir un dossier patient"  Source="/Resources/partient.png" Stretch="Fill" MouseDown="I_Patient_MouseDown"/>
                 </Border>
-                <Border Grid.Row="1" Padding="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" BorderBrush="#7F000000" BorderThickness="1,1,1,1">
-                    <Image x:Name="I_Patient" Source="/Resources/Note.png" IsEnabled="False" Stretch="Fill" MouseDown="I_Search_MouseDown"/>
+                <Border Grid.Row="1" Padding="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" BorderBrush="#7F000000" BorderThickness="1,1,1,1" Visibility="Hidden">
+                    <Image x:Name="I_Note" Source="/Resources/Note.png" IsEnabled="False" Stretch="Fill" MouseDown="I_Search_MouseDown"/>
                 </Border>
                 <Border Grid.Row="2" Padding="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" BorderBrush="#7F000000" BorderThickness="1,1,1,1">
-                    <Image x:Name="I_Calendar" Source="/Resources/Calendar.png" Stretch="Fill" MouseDown="I_Calendar_MouseDown"/>
+                    <Image x:Name="I_Calendar" ToolTip="Ouvrir le calendrier" Source="/Resources/Calendar.png" Stretch="Fill" MouseDown="I_Calendar_MouseDown"/>
                 </Border>
-                <Border Grid.Row="3" Padding="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" BorderBrush="#7F000000" BorderThickness="1,1,1,1">
+                <Border Grid.Row="3" Padding="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" BorderBrush="#7F000000" BorderThickness="1,1,1,1" Visibility="Hidden">
                     <Image x:Name="I_Stat" Source="/Resources/Stat.png" IsEnabled="False" Stretch="Fill"/>
                 </Border>
-                <Border Grid.Row="4" Padding="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" BorderBrush="#7F000000" BorderThickness="1,1,1,1">
+                <Border Grid.Row="4" Padding="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" BorderBrush="#7F000000" BorderThickness="1,1,1,1" Visibility="Hidden">
                     <Image x:Name="I_Unk" Source="/Resources/Admin.png" IsEnabled="False" Stretch="Fill"/>
                 </Border>
                 <Border Grid.Row="6" Margin="20" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" >
@@ -119,7 +119,6 @@
             </Grid.RowDefinitions>
             <Frame Name="Patient" Source="/View/PatientUI/PatientInit.xaml" Grid.RowSpan="2"/>
             <Frame Name="Calendar" Source="/View/CalendarUI/Calendar.xaml" Grid.RowSpan="2"/>
-
         </Grid>
 
     </Grid>

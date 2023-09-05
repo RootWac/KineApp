@@ -66,6 +66,8 @@ namespace KineApp.Controller
             if (SQL.Connection.AddPatient(NewPatient))
             {
                 L_Patients.Add(NewPatient);
+                AppointmentEditor.PatientsNames = GetPatientsNames();
+
                 OnNewPatient(NewPatient);
                 return true;
             }
@@ -171,11 +173,12 @@ namespace KineApp.Controller
         /// <param name="SelectedPatient"></param>
         /// <param name="sessionnumber"></param>
         /// <param name="price"></param>
-        internal static void AddRecord(Patient SelectedPatient, int sessionnumber, int price, string follow, string balancesheet)
+        internal static void AddRecord(Patient SelectedPatient, string title, int sessionnumber, int price, string follow, string balancesheet)
         {
-            if (SQL.Connection.CreateRecord(SelectedPatient, price, sessionnumber, follow, balancesheet))
+            if (SQL.Connection.CreateRecord(SelectedPatient, title, price, sessionnumber, follow, balancesheet))
             {
                 SQL.Connection.GetRecord(SelectedPatient);
+                AppointmentEditor.PatientsNames = GetPatientsNames();
             }
         }
 
@@ -185,9 +188,9 @@ namespace KineApp.Controller
         /// <param name="selectedPatient"></param>
         /// <param name="v1"></param>
         /// <param name="v2"></param>
-        internal static void UpdateRecord(Patient selectedPatient, int sessionnumber, int price, string follow, string balancesheet)
+        internal static void UpdateRecord(Patient selectedPatient, string title, int sessionnumber, int price, string follow, string balancesheet)
         {
-            if (SQL.Connection.UpdateRecord(selectedPatient, price, sessionnumber, follow, balancesheet))
+            if (SQL.Connection.UpdateRecord(selectedPatient, title, price, sessionnumber, follow, balancesheet))
             {
                 SQL.Connection.GetRecord(selectedPatient);
             }        

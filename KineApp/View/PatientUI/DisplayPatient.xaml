@@ -63,14 +63,26 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Grid>
-                        <Label Content="Seances Historique" VerticalAlignment="Top" FontWeight="Bold" Margin="0,42,0,42" Height="50" FontSize="{Binding TitleFont, Mode=TwoWay}" />
-                        <ListBox Margin="10,110,10,10" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Traitement Historique" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
+                        <ListBox x:Name="LB_OldReport" Margin="10" FontSize="{Binding Font, Mode=TwoWay}" Grid.Row="1"/>
                     </Grid>
-                    <Grid Grid.Row="1">
-                        <Label Content="Fichiers Historique" VerticalAlignment="Top" FontWeight="Bold" Margin="0,42,0,42" Height="50" Width="300" HorizontalAlignment="Left" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
-                        <Image Source="/Resources/Add.png" HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Margin="0,42,0,0"/>
-                        <ListBox Margin="10,110,10,10" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <Grid Grid.Row="1" Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Fichiers Historique" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
+                        <Image Source="/Resources/Add.png" Grid.Column="1"/>
+                        <ListBox x:Name="LB_Files" Margin="10" FontSize="{Binding Font, Mode=TwoWay}" Grid.Row="1" Grid.ColumnSpan="2"/>
                     </Grid>
                 </Grid>
             </Border>

@@ -287,8 +287,6 @@ C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\System.Numeric
 C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\ZstdSharp.dll
-C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\AM.Widget.pdb
-C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\AM.Widget.dll.config
 C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\BouncyCastle.Crypto.xml
 C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\Google.Apis.pdb
 C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\bin\x64\Debug\Google.Apis.xml

@@ -86,6 +86,7 @@ namespace KineApp.View.PatientUI
         /// </summary>
         private void DisplayPatientInformation()
         {
+            TB_Title.Text = SelectedPatient.CurrentRecord.Title.ToString();
             TB_Price.Text = SelectedPatient.CurrentRecord.Price.ToString();
             TB_SessionNumber.Text = SelectedPatient.CurrentRecord.NumberPrescribedSession.ToString();
             TB_Follow.Text = SelectedPatient.CurrentRecord.Follow;
@@ -99,7 +100,7 @@ namespace KineApp.View.PatientUI
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Data.AddRecord(SelectedPatient, int.Parse(TB_SessionNumber.Text), int.Parse(TB_Price.Text), TB_Follow.Text, TB_Bilan.Text);
+            Data.AddRecord(SelectedPatient, TB_Title.Text, int.Parse(TB_SessionNumber.Text), int.Parse(TB_Price.Text), TB_Follow.Text, TB_Bilan.Text);
             UpdatePatient(SelectedPatient);
         }
 
@@ -110,7 +111,7 @@ namespace KineApp.View.PatientUI
         /// <param name="e"></param>
         private void B_Update_Click(object sender, RoutedEventArgs e)
         {
-            Data.UpdateRecord(SelectedPatient, int.Parse(TB_SessionNumber.Text), int.Parse(TB_Price.Text), TB_Follow.Text, TB_Bilan.Text);
+            Data.UpdateRecord(SelectedPatient, TB_Title.Text, int.Parse(TB_SessionNumber.Text), int.Parse(TB_Price.Text), TB_Follow.Text, TB_Bilan.Text);
             UpdatePatient(SelectedPatient);
         }
 
@@ -121,7 +122,7 @@ namespace KineApp.View.PatientUI
         /// <param name="e"></param>
         private void B_Finish_Click(object sender, RoutedEventArgs e)
         {
-            Data.UpdateRecord(SelectedPatient, int.Parse(TB_SessionNumber.Text), int.Parse(TB_Price.Text), TB_Follow.Text, TB_Bilan.Text);
+            Data.UpdateRecord(SelectedPatient, TB_Title.Text, int.Parse(TB_SessionNumber.Text), int.Parse(TB_Price.Text), TB_Follow.Text, TB_Bilan.Text);
             SelectedPatient.CloseRecord();
             UpdatePatient(SelectedPatient);
         }
