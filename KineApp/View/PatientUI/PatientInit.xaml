@@ -5,6 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
       xmlns:local="clr-namespace:KineApp.PatientUI"
+      xmlns:skinmanager ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+      xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
       mc:Ignorable="d" 
       d:Height="1050" d:Width="1900">
     <Grid>

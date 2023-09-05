@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\obj\x64\Release\
+C:\Users\Admin\Documents\GitKraken\KineApp\KineApp\obj\x64\Release\
 KineApp
 none
 false
 TRACE
-C:\Users\amadi\source\repos\RootWac\KineApp\KineApp\App.xaml
+C:\Users\Admin\Documents\GitKraken\KineApp\KineApp\App.xaml
 111901058121
-101721969044
+10-481070096
 27-2100083864
-58755770952
+58-1850561526
 ConnectionWindow.xaml;MainWindow.xaml;PatientsWindow.xaml;View\CalendarUI\Calendar.xaml;View\PatientUI\BillingPatient.xaml;View\PatientUI\DisplayPatient.xaml;View\PatientUI\PatientCreator.xaml;View\PatientUI\PatientInit.xaml;View\PatientUI\RecordPatient.xaml;View\PatientUI\SessionPatient.xaml;View\UIControl\TextBoxHint.xaml;
 
-False
+True
 

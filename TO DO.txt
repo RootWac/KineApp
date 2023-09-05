@@ -1,2 +1,11 @@
+High priority function :
+- Add partial paiement method in billing page
+- Add the files in the listbox in the patient page
 - Add the admin patient page (Update patient informations)
 - Add function for the two calendar icon in the toolbar of the patient page 
+
+
+Low priority function : 
+- Generate an automatique reports (Example for the insurance, work prouf)
+- Add email to the patient to send an automatique email one day before the appoitement 
+- Add administration page to manage all the patients (Example change all the price for patient)

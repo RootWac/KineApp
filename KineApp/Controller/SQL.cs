@@ -206,7 +206,6 @@ namespace KineApp.Controller
 
                         Record record = new Record();
 
-
                         if (id > 0 && patient.CurrentRecord == null && end == DateTime.MinValue)
                         {
                             record.InitializeDB(id, title, begin, numberprescribedsession, price, follow, balancesheet);
