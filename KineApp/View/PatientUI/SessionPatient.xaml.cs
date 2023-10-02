@@ -52,6 +52,18 @@ namespace KineApp.View.PatientUI
 
             InitializeComponent();
             DataContext = this;
+
+            Data.UpdatePatient += new EventHandler(OnPatientUpdate);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnPatientUpdate(object sender, EventArgs e)
+        {
+            if(SelectedPatient != null) UpdateAppoitementList();
         }
 
         /// <summary>
@@ -61,6 +73,10 @@ namespace KineApp.View.PatientUI
         internal void UpdatePatient(Patient selectedPatient)
         {
             SelectedPatient = selectedPatient;
+            L_Total.Content = "Nombre total de seance prescrit : " + selectedPatient.CurrentRecord.NumberPrescribedSession;
+            PC_Session.Total = selectedPatient.CurrentRecord.NumberPrescribedSession;
+
+            LB_HistorySession.Items.Clear();
             if (selectedPatient.CurrentRecord.ListOfSession.Count > 0)
             {
                 G_LasSession.Visibility = Visibility.Visible;
@@ -76,17 +92,16 @@ namespace KineApp.View.PatientUI
                     LB_HistorySession.Items.Add(value.Date.ToString() + " " + value.Title);
                 }
                 LB_HistorySession.SelectedIndex = 0;
-
-                PC_Session.Total = selectedPatient.CurrentRecord.NumberPrescribedSession;
-                var sessionCollection = (ICollection<ObservableValue>)Series.First().Values;
-                sessionCollection.First().Value = selectedPatient.CurrentRecord.ListOfSession.Count;
-
-                L_Total.Content = "Nombre total de seance prescrit : " + selectedPatient.CurrentRecord.NumberPrescribedSession;
             }
             else
             {
                 G_LasSession.Visibility = Visibility.Hidden;
             }
+
+
+            var sessionCollection = (ICollection<ObservableValue>)Series.First().Values;
+            sessionCollection.First().Value = selectedPatient.CurrentRecord.ListOfSession.Count;
+            UpdateAppoitementList();
         }
 
         /// <summary>
@@ -100,6 +115,11 @@ namespace KineApp.View.PatientUI
             {
                 var meet = (CB_Appoitement.SelectedValue as ComboBoxItem).Tag as Meeting;
                 Data.AddSession(SelectedPatient, TB_Tilte.Text, TB_Price.Text, meet, S_SessionTime.Value, TB_Description.Text);
+                UpdatePatient(SelectedPatient);
+            }
+            else
+            {
+                MessageBox.Show("Il n'y pas de rendez selectionne pour la seance, veuillez ajouter un rendez-vous avant!");
             }
         }
 
@@ -110,21 +130,30 @@ namespace KineApp.View.PatientUI
         /// <param name="e"></param>
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            CB_Appoitement.Items.Clear();
-            int nextsession = SelectedPatient.CurrentRecord.ListOfSession.Count + 1;
-            var validappoitement = SelectedPatient.CurrentRecord.Next_Appoitements.Where(var => var.Begin.Date == DateTime.Now.Date).ToList();
-
-            TB_Tilte.Text = "Seance numero " + nextsession;
+            TB_Tilte.Text = "Seance numero " + (SelectedPatient.CurrentRecord.ListOfSession.Count + 1);
             TB_Price.Text = SelectedPatient.CurrentRecord.Price.ToString();
+            UpdateAppoitementList();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void UpdateAppoitementList()
+        {
+            CB_Appoitement.Items.Clear();
+            var validappoitement = SelectedPatient.CurrentRecord.Next_Appoitements.Where(var => var.Begin.Date == DateTime.Now.Date).ToList();
             if (validappoitement.Count > 0)
             {
-                ComboBoxItem item = new ComboBoxItem();
-                item.Content = validappoitement[0].Begin + validappoitement[0].EventName;
-                item.Tag = validappoitement[0];
+                foreach(var element in validappoitement)
+                {
+                    ComboBoxItem item = new ComboBoxItem();
+                    item.Content = element.Begin + " " + element.EventName;
+                    item.Tag = element;
 
-                CB_Appoitement.SelectedIndex = 0;
-                CB_Appoitement.Items.Add(item);
-                S_SessionTime.Value = (validappoitement[0].End - validappoitement[0].Begin).TotalMinutes;
+                    CB_Appoitement.SelectedIndex = 0;
+                    CB_Appoitement.Items.Add(item);
+                    S_SessionTime.Value = (element.End - element.Begin).TotalMinutes;
+                }
             }
         }
 
@@ -135,10 +164,19 @@ namespace KineApp.View.PatientUI
         /// <param name="e"></param>
         private void LB_HistorySession_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var value = SelectedPatient.CurrentRecord.ListOfSession[LB_HistorySession.SelectedIndex];
-            TB_HistoryDescriptionView.Text = value.Description;
-            L_HistorySessionNumber.Content = value.Title;
-            L_HistorySessionTime.Content = value.SessionTime.TotalMinutes.ToString("F0");
+            if(SelectedPatient.CurrentRecord.ListOfSession.Count > 0 && LB_HistorySession.SelectedIndex != -1)
+            {
+                var value = SelectedPatient.CurrentRecord.ListOfSession[LB_HistorySession.SelectedIndex];
+                TB_HistoryDescriptionView.Text = value.Description;
+                L_HistorySessionNumber.Content = value.Title;
+                L_HistorySessionTime.Content = value.SessionTime.TotalMinutes.ToString("F0");
+            }
+            else
+            {
+                TB_HistoryDescriptionView.Text = "";
+                L_HistorySessionNumber.Content = "";
+                L_HistorySessionTime.Content = 30;
+            }
         }
 
         private void B_Next_Click(object sender, RoutedEventArgs e)

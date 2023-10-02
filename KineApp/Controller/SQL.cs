@@ -15,6 +15,7 @@ using System.Linq;
 using Google.Protobuf.WellKnownTypes;
 using LiveChartsCore.SkiaSharpView.Painting;
 using Newtonsoft.Json.Linq;
+using System.Configuration.Provider;
 
 namespace KineApp.Controller
 {
@@ -180,7 +181,7 @@ namespace KineApp.Controller
                     MySqlConnection connection = new MySqlConnection(getConnectionQuery(3));
                     connection.Open();
 
-                    query = "SELECT * FROM center.record where patientid = " + patient.Id + ";";
+                    query = "SELECT * FROM " +  Database + ".record where patientid = " + patient.Id + ";";
 
                     //Create Command
                     MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -206,7 +207,7 @@ namespace KineApp.Controller
 
                         Record record = new Record();
 
-                        if (id > 0 && patient.CurrentRecord == null && end == DateTime.MinValue)
+                        if (id > 0 /*&& patient.CurrentRecord == null*/ && end == DateTime.MinValue)
                         {
                             record.InitializeDB(id, title, begin, numberprescribedsession, price, follow, balancesheet);
                             patient.CurrentRecord = record;
@@ -581,7 +582,7 @@ namespace KineApp.Controller
                     MySqlConnection connection = new MySqlConnection(getConnectionQuery(3));
                     connection.Open();
 
-                    query = "SELECT session.*, discount, discounttype, ispaied, transaction.date as transactiondate  FROM center.session join center.transaction on session.transactionid = transaction.id where recordid = " + patient.CurrentRecord.Id + ";";
+                    query = "SELECT session.*, discount, discounttype, ispaied, transaction.date as transactiondate  FROM " +  Database + ".session join " +  Database + ".transaction on session.transactionid = transaction.id where recordid = " + patient.CurrentRecord.Id + ";";
 
                     //Create Command
                     MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -658,6 +659,98 @@ namespace KineApp.Controller
             }
 
             return -1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="selectedPatient"></param>
+        /// <param name="type"></param>
+        /// <param name="filename"></param>
+        /// <param name="providerName"></param>
+        /// <returns></returns>
+        internal bool AddFileNameToPatient(Patient selectedPatient, string type, string filename, string providerName)
+        {
+            try
+            {
+                // Connect to location
+                MySqlConnection connection = new MySqlConnection(getConnectionQuery());
+                connection.Open();
+
+                // Update DB
+                MySqlCommand InsertQuery = connection.CreateCommand();
+                InsertQuery.CommandText = "INSERT INTO " + Database + ".files (patientid, recordid, type, filename, providername) VALUES(@patientid, @recordid, @type, @filename, @providername)";
+                InsertQuery.Parameters.AddWithValue("@patientid", selectedPatient.Id);
+                InsertQuery.Parameters.AddWithValue("@recordid", selectedPatient.CurrentRecord.Id);
+                InsertQuery.Parameters.AddWithValue("@type", type);
+                InsertQuery.Parameters.AddWithValue("@filename", filename);
+                InsertQuery.Parameters.AddWithValue("@providername", providerName);
+
+                InsertQuery.ExecuteNonQuery();
+                int ID = (int)InsertQuery.LastInsertedId;
+
+                connection.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.Write(ex.ToString(), LogStatus.Error);
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="l_Patients"></param>
+        internal void GetPatientFiles(List<Patient> l_Patients)
+        {
+            foreach (var Value in l_Patients)
+            {
+                string query = "";
+                try
+                {
+                    if (SQLisActivated)
+                    {
+
+                        // Connect to location
+                        MySqlConnection connection = new MySqlConnection(getConnectionQuery(3));
+                        connection.Open();
+
+                        query = "SELECT * FROM " +  Database + ".files where patientid = " + Value.Id + ";";
+
+                        //Create Command
+                        MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                        //Create a data reader and Execute the command
+                        MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                        Value.AdditionalFiles.Clear();
+
+                        int recordid = -1;
+                        string type, filename, providername;
+
+                        while (dataReader.Read())
+                        {
+                            recordid = (int)dataReader["recordid"];
+                            type = dataReader["type"].ToString();
+                            filename = dataReader["filename"].ToString();
+                            providername = dataReader["providername"].ToString();
+
+                            
+                            Value.AdditionalFiles.Add(new PatientFiles(recordid, type, filename, providername));
+                        }
+
+                        dataReader.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Log.Write(ex.ToString() + "\n" + query, LogStatus.Error);
+                }
+            }
         }
     }
 }

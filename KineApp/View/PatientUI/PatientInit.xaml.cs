@@ -58,8 +58,19 @@ namespace KineApp.PatientUI
             UpdateForm("Create");
             _CurrentPage = this;
 
-
+            Data.UpdatePatient += new EventHandler(OnUpdatePatient);
             Data.NewPatient += new EventHandler(OnNewPatient);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnUpdatePatient(object sender, EventArgs e)
+        {
+            if(SelectedPatient != null)
+                UpdatePatient(SelectedPatient);
         }
 
         /// <summary>

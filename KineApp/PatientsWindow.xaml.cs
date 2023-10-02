@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Management;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -25,6 +27,7 @@ namespace KineApp
     {
         public PatientsWindow()
         {
+
             //FileIO.WriteGoogleCalendar();
             //FileIO.WriteSQL();
             FileIO.ReadSQLFile();

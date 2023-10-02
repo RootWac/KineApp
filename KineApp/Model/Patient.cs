@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KineApp.Controller;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -30,6 +31,7 @@ namespace KineApp.Model
 
         public Dictionary<int, Record> AllRecords = new Dictionary<int, Record>();
         public Record CurrentRecord;
+        internal List<PatientFiles> AdditionalFiles = new List<PatientFiles>();
 
         public Patient()
         {

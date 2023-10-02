@@ -105,39 +105,39 @@
             <Border x:Name="TaskBar" Background="White" CornerRadius="30,30,30,30" Margin="10,10,10,10" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6">
                 <DockPanel x:Name="DP_ToolbarPatient" IsEnabled="False" HorizontalAlignment="Left" Width="1900" Margin="10,10,10,10">
                     <ToolBar x:Name="TLB_Patient">
-                        <RadioButton x:Name="RB_Home" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="ToggleHome_Checked">
+                        <RadioButton x:Name="RB_Home" ToolTip="Ouvrir l'apercu du patient" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="ToggleHome_Checked">
                             <RadioButton.Background>
                                 <ImageBrush ImageSource="/Resources/Home.png" Stretch="Uniform"/>
                             </RadioButton.Background>
                         </RadioButton>
-                        <RadioButton x:Name="RB_Record" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="ToggleSession_Checked">
+                        <RadioButton x:Name="RB_Record" ToolTip="Gerer le suivi du patient" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="ToggleSession_Checked">
                             <RadioButton.Background>
-                                <ImageBrush ImageSource="/Resources/Notes.png" Stretch="Uniform"/>
+                                <ImageBrush ImageSource="/Resources/Follow.png" Stretch="Uniform"/>
                             </RadioButton.Background>
                         </RadioButton>
-                        <RadioButton x:Name="RB_Sessions" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="RB_Sessions_Checked">
+                        <RadioButton x:Name="RB_Sessions" ToolTip="Gerer les sessions du patient" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Checked="RB_Sessions_Checked">
                             <ToggleButton.Background>
-                                <ImageBrush ImageSource="/Resources/History.png" Stretch="Uniform"/>
+                                <ImageBrush ImageSource="/Resources/Session.png" Stretch="Uniform"/>
                             </ToggleButton.Background>
                         </RadioButton>
-                        <RadioButton x:Name="RB_Billing" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}"  Checked="ToggleBilling_Checked">
+                        <RadioButton x:Name="RB_Billing" ToolTip="Gerer les paiements du patient" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}"  Checked="ToggleBilling_Checked">
                             <ToggleButton.Background>
-                                <ImageBrush ImageSource="/Resources/Facturation.jpg" Stretch="Uniform"/>
+                                <ImageBrush ImageSource="/Resources/Billing.png" Stretch="Uniform"/>
                             </ToggleButton.Background>
                         </RadioButton>
                     </ToolBar>
                     <ToolBar>
-                        <ToggleButton Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}">
+                        <ToggleButton ToolTip="Visualiser tous les rendez-vous pris par le patient" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}"  Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/Events.png"/>
                             </ToggleButton.Background>
                         </ToggleButton>
-                        <ToggleButton Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}">
+                        <ToggleButton ToolTip="Visualiser tous les prochains rendez-vous du patient" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/Next Event.png"/>
                             </ToggleButton.Background>
                         </ToggleButton>
-                        <ToggleButton x:Name="TB_AddEvent" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Click="TB_AddEvent_Click">
+                        <ToggleButton x:Name="TB_AddEvent" ToolTip="Ajouter un nouveau rendez-vous" Width="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Height="{Binding ElementName=TLB_Patient, Path=ActualHeight}" Click="TB_AddEvent_Click">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Resources/NewEvent.png" />
                             </ToggleButton.Background>

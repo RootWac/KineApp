@@ -81,9 +81,9 @@ namespace KineApp.Model
         /// <param name="value"></param>
         internal void AddAppointement(Meeting value)
         {
-            if(Id == value.PatientID && ListOfSession.Where(var => (int)var.appoint.MeetingID == (int)value.MeetingID).Count()==0)
+            if(Id == value.PatientID && ListOfSession.Where(var => (int)var.appoint.MeetingID == (int)value.MeetingID).Count()==0 && value.Begin > DateTime.Now.Date)
             {
-                Next_Appoitements.RemoveWhere(var => var.MeetingID == value.MeetingID);
+                Next_Appoitements.RemoveWhere(var => (int)var.MeetingID == (int)value.MeetingID);
                 Next_Appoitements.Add(value);
             }
         }

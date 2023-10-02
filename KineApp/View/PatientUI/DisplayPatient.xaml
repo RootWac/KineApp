@@ -36,7 +36,7 @@
                         InitialRotation="-180"
                         MaxAngle="180"
                         Total="20" Margin="10,10,10,-109" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-                    <Label Content="Nombre de Seance:" HorizontalContentAlignment="Center" Grid.Row="1" VerticalContentAlignment="Bottom" FontWeight="Bold" FontSize="{Binding Font, Mode=TwoWay}"/>
+                    <Label Content="Nombre de séances prescrites:" HorizontalContentAlignment="Center" Grid.Row="1" VerticalContentAlignment="Bottom" FontWeight="Bold" FontSize="{Binding Font, Mode=TwoWay}"/>
                     <Label Content="Total de minutes:" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Bottom" FontWeight="Bold" FontSize="{Binding Font, Mode=TwoWay}"/>
                     <Label x:Name="L_SessionCount" Content="5" HorizontalContentAlignment="Center" Grid.Row="2" VerticalContentAlignment="Top" FontSize="{Binding Font, Mode=TwoWay}"/>
                     <Label x:Name="L_SessionTime" Content="25min" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Top" FontSize="{Binding Font, Mode=TwoWay}"/>
@@ -81,8 +81,8 @@
                             <RowDefinition Height="4*"/>
                         </Grid.RowDefinitions>
                         <Label Content="Fichiers Historique" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="{Binding TitleFont, Mode=TwoWay}"/>
-                        <Image Source="/Resources/Add.png" Grid.Column="1"/>
-                        <ListBox x:Name="LB_Files" Margin="10" FontSize="{Binding Font, Mode=TwoWay}" Grid.Row="1" Grid.ColumnSpan="2"/>
+                        <Image Source="/Resources/Add.png" Grid.Column="1" MouseDown="Image_MouseDown"/>
+                        <ListBox x:Name="LB_Files" Margin="10" FontSize="{Binding Font, Mode=TwoWay}" Grid.Row="1" Grid.ColumnSpan="2" MouseDoubleClick="LB_Files_MouseDoubleClick"/>
                     </Grid>
                 </Grid>
             </Border>

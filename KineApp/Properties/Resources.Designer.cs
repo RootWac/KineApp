@@ -113,6 +113,16 @@ namespace KineApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Billing {
+            get {
+                object obj = ResourceManager.GetObject("Billing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Calendar {
             get {
                 object obj = ResourceManager.GetObject("Calendar", resourceCulture);
@@ -173,9 +183,9 @@ namespace KineApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Facturation {
+        internal static System.Drawing.Bitmap Follow {
             get {
-                object obj = ResourceManager.GetObject("Facturation", resourceCulture);
+                object obj = ResourceManager.GetObject("Follow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +306,16 @@ namespace KineApp.Properties {
         internal static System.Drawing.Bitmap Search {
             get {
                 object obj = ResourceManager.GetObject("Search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Session {
+            get {
+                object obj = ResourceManager.GetObject("Session", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

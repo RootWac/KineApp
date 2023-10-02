@@ -97,12 +97,11 @@ namespace KineApp.Controller
             L_Patients = SQL.Connection.GetPatients();
             GetAppointements();
             SQL.Connection.GetRecord(L_Patients);
-
+            SQL.Connection.GetPatientFiles(L_Patients);
         }
         #endregion
 
         #region Appointement
-
         public static void AddAppointementToPatient(Meeting value)
         {
             //L_Patients.Where(var => var.CurrentRecord != null && var.CurrentRecord.Id == value.PatientID).ToList().ForEach(var => var.CurrentRecord.AddAppointement(value));
@@ -155,6 +154,7 @@ namespace KineApp.Controller
         {
             var list = SQL.Connection.GetAppointements();
 
+            L_Patients.Where(val => val.CurrentRecord != null).ToList().ForEach(val => val.CurrentRecord.Next_Appoitements.Clear());
             foreach (var item in list) { AddAppointementToPatient(item); }
 
             if (IsGoogleCalendarActivated)
@@ -202,7 +202,20 @@ namespace KineApp.Controller
             if (SQL.Connection.AddSession(SelectedPatient, Title, Price, meet, SessionTime, Description))
             {
                 SQL.Connection.GetSessions(SelectedPatient);
+                GetAppointements();
+                OnUpdatePatient();
             }
+        }
+
+        internal static bool AddFileNameToPatient(Patient selectedPatient, string type, string filename, string providerName)
+        {
+            if (SQL.Connection.AddFileNameToPatient(selectedPatient, type, filename, providerName))
+            {
+                selectedPatient.AdditionalFiles.Add(new PatientFiles(selectedPatient.CurrentRecord.Id, type, filename, providerName));
+                return true;
+            }
+
+            return false;
         }
 
 
